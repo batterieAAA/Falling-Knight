@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd7lciym65218"]
+
+[ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_yuea6"]
+[ext_resource type="AudioStream" uid="uid://csqnu53hfstf6" path="res://Assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="2_34yp1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 186.0
+offset_bottom = 24.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("1_yuea6")
+theme_override_font_sizes/font_size = 50
+text = "Falling Knight"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_34yp1")
