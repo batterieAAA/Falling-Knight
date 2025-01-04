@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://7vmynjwuhmbj"]
+[gd_scene load_steps=8 format=3 uid="uid://7vmynjwuhmbj"]
 
 [ext_resource type="Texture2D" uid="uid://rnf74w7s5a2r" path="res://Assets/backgrounds/background1.png" id="1_ox10v"]
 [ext_resource type="Texture2D" uid="uid://cfh8p5dvsntbd" path="res://Assets/backgrounds/background2.png" id="2_gl181"]
 [ext_resource type="Texture2D" uid="uid://rc44msguql3v" path="res://Assets/backgrounds/background3.png" id="3_e702l"]
 [ext_resource type="Texture2D" uid="uid://dfgetcguu851j" path="res://Assets/backgrounds/background4a.png" id="4_jentc"]
 [ext_resource type="PackedScene" uid="uid://bx37itkfim3pw" path="res://knight.tscn" id="5_xade8"]
+[ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_rqegx"]
+[ext_resource type="PackedScene" uid="uid://c306fb5j8iyvo" path="res://coin.tscn" id="7_qy7lf"]
 
 [node name="Game" type="Node2D"]
 
@@ -47,3 +49,17 @@ motion_mirroring = Vector2(0, 480)
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer4"]
 texture = ExtResource("4_jentc")
 centered = false
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+offset_left = 59.0
+offset_right = 128.0
+offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("6_rqegx")
+theme_override_font_sizes/font_size = 50
+text = " 0"
+
+[node name="Coin" parent="CanvasLayer2" instance=ExtResource("7_qy7lf")]
+position = Vector2(41, 21)
+scale = Vector2(5, 5)

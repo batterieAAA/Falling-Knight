@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bx37itkfim3pw"]
+[gd_scene load_steps=21 format=3 uid="uid://bx37itkfim3pw"]
 
 [ext_resource type="Script" path="res://knight.gd" id="1_4csyi"]
 [ext_resource type="Texture2D" uid="uid://cwg0bhergmjwm" path="res://Assets/brackeys_platformer_assets/sprites/knight.png" id="1_c4uhp"]
@@ -34,10 +34,6 @@ region = Rect2(128, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dopt7"]
 atlas = ExtResource("1_c4uhp")
 region = Rect2(160, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gd57w"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(192, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlo0o"]
 atlas = ExtResource("1_c4uhp")
@@ -102,11 +98,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dopt7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gd57w")
 }],
-"loop": false,
+"loop": true,
 "name": &"fall",
 "speed": 10.0
 }, {
@@ -150,11 +143,13 @@ script = ExtResource("1_4csyi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wf4b1")
-animation = &"death"
+animation = &"fall"
+autoplay = "fall"
+frame_progress = 0.881125
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_hdxep")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
