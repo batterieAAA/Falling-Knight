@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd7lciym65218"]
+[gd_scene load_steps=4 format=3 uid="uid://dd7lciym65218"]
 
+[ext_resource type="Script" path="res://main_menu.gd" id="1_tnlxb"]
 [ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_yuea6"]
 [ext_resource type="AudioStream" uid="uid://csqnu53hfstf6" path="res://Assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="2_34yp1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_tnlxb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
