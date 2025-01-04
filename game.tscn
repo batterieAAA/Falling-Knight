@@ -9,7 +9,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="Knight" parent="." instance=ExtResource("5_xade8")]
-position = Vector2(61, 22)
+position = Vector2(437, 22)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -17,6 +17,7 @@ position = Vector2(61, 22)
 follow_viewport_scale = 1000.0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0, 0)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
@@ -24,6 +25,7 @@ texture = ExtResource("1_ox10v")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
@@ -31,6 +33,7 @@ texture = ExtResource("2_gl181")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3"]
@@ -38,6 +41,7 @@ texture = ExtResource("3_e702l")
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer4"]
