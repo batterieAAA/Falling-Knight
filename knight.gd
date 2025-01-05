@@ -1,17 +1,19 @@
 extends CharacterBody2D
 
+@onready var pickupSound = $CoinSound
 @onready var sprite = $AnimatedSprite2D
 @onready var camera = $"../Camera2D" 
 @onready var score_label = $"../CanvasLayer2/Label" 
+@onready var powerupsound = $PowerUpSound
+
+
+
 const SPEED = 150
 
 enum {FALL, RUN, DEATH}
 
 var state = FALL
 var score = 0 # Initialize the score
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -42,4 +44,10 @@ func _physics_process(delta):
 
 func _on_coin_collected(): 
 	score += 1 
+	pickupSound.playing = true
 	score_label.text = str(score)
+
+func _on_fruit_collected(): 
+	powerupsound.playing = true
+	sprite.speed_scale += 1
+

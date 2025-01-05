@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://7vmynjwuhmbj"]
+[gd_scene load_steps=25 format=3 uid="uid://7vmynjwuhmbj"]
 
 [ext_resource type="Texture2D" uid="uid://rnf74w7s5a2r" path="res://Assets/backgrounds/background1.png" id="1_ox10v"]
 [ext_resource type="Texture2D" uid="uid://cfh8p5dvsntbd" path="res://Assets/backgrounds/background2.png" id="2_gl181"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bx37itkfim3pw" path="res://knight.tscn" id="5_xade8"]
 [ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_rqegx"]
 [ext_resource type="Texture2D" uid="uid://bqdwrug0eeofu" path="res://Assets/brackeys_platformer_assets/sprites/coin.png" id="9_1w86k"]
+[ext_resource type="AudioStream" uid="uid://csqnu53hfstf6" path="res://Assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="10_nm03y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkjr7"]
 size = Vector2(200, 50)
@@ -115,6 +116,7 @@ script = ExtResource("2_vkdfl")
 shape = SubResource("RectangleShape2D_kkjr7")
 
 [node name="Timer" type="Timer" parent="CoinSpawner"]
+wait_time = 5.0
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -166,15 +168,25 @@ centered = false
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer2"]
-offset_left = 59.0
-offset_top = 5.0
-offset_right = 128.0
-offset_bottom = 57.0
+offset_left = 85.0
+offset_top = 35.0
+offset_right = 154.0
+offset_bottom = 87.0
 theme_override_fonts/font = ExtResource("6_rqegx")
 theme_override_font_sizes/font_size = 50
 text = " 0"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2"]
-position = Vector2(41, 30)
+texture_filter = 1
+position = Vector2(43, 56)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_36jam")
+autoplay = "default"
+frame_progress = 0.681717
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_nm03y")
+volume_db = -7.495
+autoplay = true
+
+[connection signal="timeout" from="CoinSpawner/Timer" to="CoinSpawner" method="_on_timer_timeout"]

@@ -3,8 +3,10 @@ extends Area2D
 @onready var player = $"/root/Game/Knight"
 #Preload the item scene
 var item_preload = preload("res://coin.tscn")
+var fruit_preload = preload("res://fruit.tscn")
 #Define the interval (in seconds) between spawns
-@export var spawn_interval = 1.0
+@export var spawn_interval = randi_range(0, 2)
+
 
 func _ready():
 	# Create and start a timer
@@ -18,11 +20,31 @@ func _ready():
 func _on_timeout():
 	# Spawn a new item at a random position within the Area2D
 	var item = item_preload.instantiate()
+
 	var area_extents = $CollisionShape2D.shape.extents
 	item.position = Vector2(
 		randf_range(-area_extents.x, area_extents.x),
 		randf_range(-area_extents.y, area_extents.y)
 	)
+
 	# Connect the coin_collected signal to the player 
 	item.connect("coin_collected", Callable(player, "_on_coin_collected"))
+
 	add_child(item)
+
+
+
+func _on_timer_timeout():
+	
+	
+	var fruit = fruit_preload.instantiate()
+	var area_extents = $CollisionShape2D.shape.extents
+	
+	fruit.position = Vector2(
+		randf_range(-area_extents.x, area_extents.x),
+		randf_range(-area_extents.y, area_extents.y)
+	)
+	fruit.connect("fruit_collected", Callable(player, "_on_fruit_collected"))
+	add_child(fruit)
+	
+	
