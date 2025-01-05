@@ -1,40 +1,135 @@
-[gd_scene load_steps=10 format=3 uid="uid://7vmynjwuhmbj"]
+[gd_scene load_steps=24 format=3 uid="uid://7vmynjwuhmbj"]
 
 [ext_resource type="Texture2D" uid="uid://rnf74w7s5a2r" path="res://Assets/backgrounds/background1.png" id="1_ox10v"]
 [ext_resource type="Texture2D" uid="uid://cfh8p5dvsntbd" path="res://Assets/backgrounds/background2.png" id="2_gl181"]
 [ext_resource type="Script" path="res://CoinSpawner.gd" id="2_vkdfl"]
 [ext_resource type="Texture2D" uid="uid://rc44msguql3v" path="res://Assets/backgrounds/background3.png" id="3_e702l"]
+[ext_resource type="Script" path="res://ParallaxMovement.gd" id="3_hdrdn"]
 [ext_resource type="Texture2D" uid="uid://dfgetcguu851j" path="res://Assets/backgrounds/background4a.png" id="4_jentc"]
 [ext_resource type="PackedScene" uid="uid://bx37itkfim3pw" path="res://knight.tscn" id="5_xade8"]
 [ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_rqegx"]
-[ext_resource type="PackedScene" uid="uid://c306fb5j8iyvo" path="res://coin.tscn" id="7_qy7lf"]
+[ext_resource type="Texture2D" uid="uid://bqdwrug0eeofu" path="res://Assets/brackeys_platformer_assets/sprites/coin.png" id="9_1w86k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkjr7"]
-size = Vector2(384, 4270)
+size = Vector2(200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbxrw"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amsi8"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fuli"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inj83"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc5b8"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl0vw"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rklww"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0ruo"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kupt6"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06os8"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8klc6"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj6mf"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36jam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbxrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amsi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fuli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inj83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uc5b8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl0vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rklww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0ruo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kupt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06os8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8klc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj6mf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D"]
 
 [node name="CoinSpawner" type="Area2D" parent="."]
-position = Vector2(437, 22)
+position = Vector2(435, 257)
 script = ExtResource("2_vkdfl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoinSpawner"]
-position = Vector2(0, 2245)
 shape = SubResource("RectangleShape2D_kkjr7")
 
 [node name="Timer" type="Timer" parent="CoinSpawner"]
 autostart = true
 
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(437, 22)
+zoom = Vector2(3, 3)
+
 [node name="Knight" parent="." instance=ExtResource("5_xade8")]
 position = Vector2(437, 22)
-
-[node name="Camera2D2" type="Camera2D" parent="Knight"]
-zoom = Vector2(3, 3)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 follow_viewport_scale = 1000.0
+script = ExtResource("3_hdrdn")
+speed = Vector2(0, -50)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 motion_scale = Vector2(0, 0)
@@ -45,7 +140,7 @@ texture = ExtResource("1_ox10v")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
-motion_scale = Vector2(0.2, 0.2)
+motion_scale = Vector2(0.25, 0.25)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
@@ -53,7 +148,7 @@ texture = ExtResource("2_gl181")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
-motion_scale = Vector2(0.4, 0.4)
+motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3"]
@@ -61,7 +156,7 @@ texture = ExtResource("3_e702l")
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
-motion_scale = Vector2(0.6, 0.6)
+motion_scale = Vector2(0.75, 0.75)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer4"]
@@ -72,12 +167,14 @@ centered = false
 
 [node name="Label" type="Label" parent="CanvasLayer2"]
 offset_left = 59.0
+offset_top = 5.0
 offset_right = 128.0
-offset_bottom = 51.0
+offset_bottom = 57.0
 theme_override_fonts/font = ExtResource("6_rqegx")
 theme_override_font_sizes/font_size = 50
 text = " 0"
 
-[node name="Coin" parent="CanvasLayer2" instance=ExtResource("7_qy7lf")]
-position = Vector2(41, 21)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2"]
+position = Vector2(41, 30)
 scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_36jam")
