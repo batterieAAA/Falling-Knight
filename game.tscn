@@ -117,7 +117,7 @@ shape = SubResource("RectangleShape2D_kkjr7")
 [node name="Timer" type="Timer" parent="CoinSpawner"]
 autostart = true
 
-[node name="Camera2D2" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(437, 22)
 zoom = Vector2(3, 3)
 

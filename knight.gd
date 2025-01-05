@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@onready var sprite = $AnimatedSprite2D
+@onready var sprite = $AnimatedSprite2D  # Adjust this path to match your node structure
+@onready var camera = $"../Camera2D"  # Adjust this path to match your node structure
 
 const SPEED = 150
 
@@ -13,7 +14,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -23,8 +23,17 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	# Ensure the character stays within the viewport boundaries
-	var viewport_rect = get_viewport_rect()
+	# Ensure the character stays within the viewport boundaries, considering the zoom factor
+	var camera_position = camera.global_position
+	var viewport_size = get_viewport().get_visible_rect().size
+	var zoom_factor = camera.zoom
 
-	position.x = clamp(position.x, 0, viewport_rect.size.x)
-	position.y = clamp(position.y, 0, viewport_rect.size.y)
+	var half_width = (viewport_size.x / 2) / zoom_factor.x
+	var min_x = camera_position.x - half_width
+	var max_x = camera_position.x + half_width
+
+	# Wrap-around effect
+	if position.x < min_x:
+		position.x = max_x
+	elif position.x > max_x:
+		position.x = min_x

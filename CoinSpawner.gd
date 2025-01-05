@@ -18,10 +18,8 @@ func _on_timeout():
 	# Spawn a new item at a random position within the Area2D
 	var item = item_preload.instantiate()
 	var area_extents = $CollisionShape2D.shape.extents
-	var collision_shape_pos = $CollisionShape2D.global_position
 	item.position = Vector2(
 		randf_range(-area_extents.x, area_extents.x),
 		randf_range(-area_extents.y, area_extents.y)
 	)
-	print(item.position)
 	add_child(item)
