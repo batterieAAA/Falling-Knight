@@ -10,25 +10,26 @@
 [ext_resource type="PackedScene" uid="uid://c306fb5j8iyvo" path="res://coin.tscn" id="7_qy7lf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkjr7"]
-size = Vector2(384, 13)
+size = Vector2(384, 4270)
 
 [node name="Game" type="Node2D"]
+
+[node name="CoinSpawner" type="Area2D" parent="."]
+position = Vector2(437, 22)
+script = ExtResource("2_vkdfl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoinSpawner"]
+position = Vector2(0, 2245)
+shape = SubResource("RectangleShape2D_kkjr7")
+
+[node name="Timer" type="Timer" parent="CoinSpawner"]
+autostart = true
 
 [node name="Knight" parent="." instance=ExtResource("5_xade8")]
 position = Vector2(437, 22)
 
 [node name="Camera2D2" type="Camera2D" parent="Knight"]
 zoom = Vector2(3, 3)
-
-[node name="CoinSpawner" type="Area2D" parent="Knight/Camera2D2"]
-script = ExtResource("2_vkdfl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Knight/Camera2D2/CoinSpawner"]
-position = Vector2(0, 116.5)
-shape = SubResource("RectangleShape2D_kkjr7")
-
-[node name="Timer" type="Timer" parent="Knight/Camera2D2/CoinSpawner"]
-autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
