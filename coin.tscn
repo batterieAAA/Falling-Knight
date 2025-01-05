@@ -109,3 +109,5 @@ frame_progress = 0.306561
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5ne2e")
+
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]

@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var player = $"/root/Game/Knight"
 #Preload the item scene
 var item_preload = preload("res://coin.tscn")
 #Define the interval (in seconds) between spawns
@@ -22,4 +23,6 @@ func _on_timeout():
 		randf_range(-area_extents.x, area_extents.x),
 		randf_range(-area_extents.y, area_extents.y)
 	)
+	# Connect the coin_collected signal to the player 
+	item.connect("coin_collected", Callable(player, "_on_coin_collected"))
 	add_child(item)

@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
-@onready var sprite = $AnimatedSprite2D  # Adjust this path to match your node structure
-@onready var camera = $"../Camera2D"  # Adjust this path to match your node structure
-
+@onready var sprite = $AnimatedSprite2D
+@onready var camera = $"../Camera2D" 
+@onready var score_label = $"../CanvasLayer2/Label" 
 const SPEED = 150
 
 enum {FALL, RUN, DEATH}
 
 var state = FALL
+var score = 0 # Initialize the score
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -37,3 +38,8 @@ func _physics_process(delta):
 		position.x = max_x
 	elif position.x > max_x:
 		position.x = min_x
+
+
+func _on_coin_collected(): 
+	score += 1 
+	score_label.text = str(score)
