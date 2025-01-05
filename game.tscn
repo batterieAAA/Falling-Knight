@@ -117,7 +117,15 @@ script = ExtResource("2_vkdfl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoinSpawner"]
 shape = SubResource("RectangleShape2D_kkjr7")
 
-[node name="Timer" type="Timer" parent="CoinSpawner"]
+[node name="CoinTimer" type="Timer" parent="CoinSpawner"]
+wait_time = 2.5
+autostart = true
+
+[node name="FruitTimer" type="Timer" parent="CoinSpawner"]
+wait_time = 5.0
+autostart = true
+
+[node name="EnemyTimer" type="Timer" parent="CoinSpawner"]
 wait_time = 5.0
 autostart = true
 
@@ -220,4 +228,6 @@ stream = ExtResource("10_nm03y")
 volume_db = -7.495
 autoplay = true
 
-[connection signal="timeout" from="CoinSpawner/Timer" to="CoinSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="CoinSpawner/CoinTimer" to="CoinSpawner" method="_on_coin_timer_timeout"]
+[connection signal="timeout" from="CoinSpawner/FruitTimer" to="CoinSpawner" method="_on_fruit_timer_timeout"]
+[connection signal="timeout" from="CoinSpawner/EnemyTimer" to="CoinSpawner" method="_on_enemy_timer_timeout"]

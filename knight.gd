@@ -11,6 +11,7 @@ extends CharacterBody2D
 
 const SPEED = 150
 var speedMod = 1
+var invincible = false  # Variable to track invincibility
 
 enum {FALL, RUN, DEATH}
 
@@ -45,11 +46,17 @@ func _physics_process(delta):
 		position.x = min_x
 
 func take_damage():
-	health -= 1
-	ui.update_hearts(health)
-	
-	if health <= 0:
-		die()
+	if not invincible:
+		health -= 1
+		ui.update_hearts(health)
+		sprite.modulate = Color(1, 0, 0)  # Red color
+		invincible = true  # Set invincibility to true
+		
+		# Start the DamageTimer
+		$Timer.start()
+		
+		if health <= 0:
+			die()
 
 func die():
 	# Handle player death logic here
@@ -67,4 +74,8 @@ func _on_fruit_collected():
 	speedMod += 0.1
 
 func _on_enemy_touched():
-	take_damage()
+	take_damage()  
+
+func _on_timer_timeout():
+	sprite.modulate = Color(1, 1, 1)  # Normal color
+	invincible = false  # Revert invincibility to false
