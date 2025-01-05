@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var camera = $"../Camera2D" 
 @onready var score_label = $"../CanvasLayer2/Label" 
 @onready var powerupsound = $PowerUpSound
+@onready var knight = $"."
 
 
 
@@ -50,4 +51,6 @@ func _on_coin_collected():
 func _on_fruit_collected(): 
 	powerupsound.playing = true
 	sprite.speed_scale += 1
+	knight.scale.x *= 1.1
+	knight.scale.y *= 1.1
 

@@ -147,7 +147,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wf4b1")
 animation = &"fall"
 autoplay = "fall"
-frame_progress = 0.937879
+frame_progress = 0.283194
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
