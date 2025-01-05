@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://bx37itkfim3pw"]
+[gd_scene load_steps=24 format=3 uid="uid://bx37itkfim3pw"]
 
 [ext_resource type="Script" path="res://knight.gd" id="1_4csyi"]
 [ext_resource type="Texture2D" uid="uid://cwg0bhergmjwm" path="res://Assets/brackeys_platformer_assets/sprites/knight.png" id="1_c4uhp"]
 [ext_resource type="AudioStream" uid="uid://dlg62eleehada" path="res://Assets/brackeys_platformer_assets/sounds/coin.wav" id="3_h3tap"]
 [ext_resource type="AudioStream" uid="uid://dnyn0ks7nvjcb" path="res://Assets/brackeys_platformer_assets/sounds/power_up.wav" id="4_45am3"]
+[ext_resource type="AudioStream" uid="uid://bgpp56slccmlp" path="res://Assets/brackeys_platformer_assets/sounds/hurt.wav" id="5_ltmou"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fv53v"]
 atlas = ExtResource("1_c4uhp")
@@ -147,7 +148,6 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wf4b1")
 animation = &"fall"
 autoplay = "fall"
-frame_progress = 0.283194
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
@@ -160,5 +160,8 @@ stream = ExtResource("3_h3tap")
 stream = ExtResource("4_45am3")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ltmou")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

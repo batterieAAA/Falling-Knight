@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var score_label = $"../CanvasLayer2/Label" 
 @onready var powerupsound = $PowerUpSound
 @onready var knight = $"."
+@onready var hurtsound = $HurtSound
+
 
 @onready var ui = get_node("../CanvasLayer2/HealthUI")  # Adjust this path to match your node structure
 
@@ -48,6 +50,7 @@ func _physics_process(delta):
 func take_damage():
 	if not invincible:
 		health -= 1
+		hurtsound.playing = true
 		ui.update_hearts(health)
 		sprite.modulate = Color(1, 0, 0)  # Red color
 		invincible = true  # Set invincibility to true

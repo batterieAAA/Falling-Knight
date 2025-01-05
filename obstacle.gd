@@ -1,10 +1,15 @@
 extends Area2D
 
 @export var speed = 100.0
+@onready var camera = $"../../Camera2D" 
+var direction = randi_range(-1,1)
 
-func _process(delta):
+func _physics_process(delta):
 	# Move the coin upwards
 	position.y -= speed * delta
+	position.x += speed * direction * delta
+
+
 
 signal enemy_touched 
 
