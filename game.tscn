@@ -1,14 +1,16 @@
-[gd_scene load_steps=25 format=3 uid="uid://7vmynjwuhmbj"]
+[gd_scene load_steps=27 format=3 uid="uid://7vmynjwuhmbj"]
 
 [ext_resource type="Texture2D" uid="uid://rnf74w7s5a2r" path="res://Assets/backgrounds/background1.png" id="1_ox10v"]
 [ext_resource type="Texture2D" uid="uid://cfh8p5dvsntbd" path="res://Assets/backgrounds/background2.png" id="2_gl181"]
-[ext_resource type="Script" path="res://CoinSpawner.gd" id="2_vkdfl"]
+[ext_resource type="Script" path="res://Spawner.gd" id="2_vkdfl"]
 [ext_resource type="Texture2D" uid="uid://rc44msguql3v" path="res://Assets/backgrounds/background3.png" id="3_e702l"]
 [ext_resource type="Script" path="res://ParallaxMovement.gd" id="3_hdrdn"]
 [ext_resource type="Texture2D" uid="uid://dfgetcguu851j" path="res://Assets/backgrounds/background4a.png" id="4_jentc"]
 [ext_resource type="PackedScene" uid="uid://bx37itkfim3pw" path="res://knight.tscn" id="5_xade8"]
 [ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_rqegx"]
 [ext_resource type="Texture2D" uid="uid://bqdwrug0eeofu" path="res://Assets/brackeys_platformer_assets/sprites/coin.png" id="9_1w86k"]
+[ext_resource type="Script" path="res://HealthUI.gd" id="10_16hlk"]
+[ext_resource type="Texture2D" uid="uid://dnrnbrw3tu6nw" path="res://Assets/heart sprite/Heart.png" id="10_iuvd1"]
 [ext_resource type="AudioStream" uid="uid://csqnu53hfstf6" path="res://Assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="10_nm03y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkjr7"]
@@ -168,21 +170,50 @@ centered = false
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer2"]
-offset_left = 85.0
-offset_top = 35.0
-offset_right = 154.0
-offset_bottom = 87.0
+offset_left = 616.0
+offset_top = 24.0
+offset_right = 685.0
+offset_bottom = 76.0
 theme_override_fonts/font = ExtResource("6_rqegx")
 theme_override_font_sizes/font_size = 50
 text = " 0"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2"]
 texture_filter = 1
-position = Vector2(43, 56)
+position = Vector2(574, 45)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_36jam")
 autoplay = "default"
 frame_progress = 0.681717
+
+[node name="HealthUI" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 29.0
+offset_top = 24.0
+offset_right = 69.0
+offset_bottom = 64.0
+script = ExtResource("10_16hlk")
+
+[node name="Heart1" type="TextureRect" parent="CanvasLayer2/HealthUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_iuvd1")
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer2/HealthUI"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 80.0
+offset_bottom = 40.0
+texture = ExtResource("10_iuvd1")
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer2/HealthUI"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 120.0
+offset_bottom = 40.0
+texture = ExtResource("10_iuvd1")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_nm03y")

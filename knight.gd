@@ -7,20 +7,22 @@ extends CharacterBody2D
 @onready var powerupsound = $PowerUpSound
 @onready var knight = $"."
 
-
+@onready var ui = get_node("../CanvasLayer2/HealthUI")  # Adjust this path to match your node structure
 
 const SPEED = 150
+var speedMod = 1
 
 enum {FALL, RUN, DEATH}
 
 var state = FALL
-var score = 0 # Initialize the score
+var score = 0  # Initialize the score
+var health = 3  # Initialize the health
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED * speedMod
 		sprite.flip_h = velocity.x < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -42,15 +44,27 @@ func _physics_process(delta):
 	elif position.x > max_x:
 		position.x = min_x
 
+func take_damage():
+	health -= 1
+	ui.update_hearts(health)
+	
+	if health <= 0:
+		die()
 
-func _on_coin_collected(): 
-	score += 1 
+func die():
+	# Handle player death logic here
+	print("Player has died")
+	get_tree().paused = true
+
+func _on_coin_collected():
+	score += 1
 	pickupSound.playing = true
 	score_label.text = str(score)
 
-func _on_fruit_collected(): 
+func _on_fruit_collected():
 	powerupsound.playing = true
-	sprite.speed_scale += 1
-	knight.scale.x *= 1.1
-	knight.scale.y *= 1.1
+	sprite.speed_scale += 0.1
+	speedMod += 0.1
 
+func _on_enemy_touched():
+	take_damage()

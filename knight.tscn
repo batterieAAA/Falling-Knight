@@ -155,7 +155,6 @@ shape = SubResource("CapsuleShape2D_hdxep")
 
 [node name="CoinSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_h3tap")
-bus = &"sfx"
 
 [node name="PowerUpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_45am3")

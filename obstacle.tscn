@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://cn3tb8cv3paqd"]
+
+[ext_resource type="Script" path="res://obstacle.gd" id="1_ru6aq"]
+[ext_resource type="Texture2D" uid="uid://dft7kvv5hf5af" path="res://Assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_8nn3q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w45je"]
+atlas = ExtResource("2_8nn3q")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uca2"]
+atlas = ExtResource("2_8nn3q")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdtka"]
+atlas = ExtResource("2_8nn3q")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuc67"]
+atlas = ExtResource("2_8nn3q")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ognc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w45je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uca2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdtka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuc67")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ne2e"]
+radius = 5.09902
+
+[node name="Obstacle" type="Area2D"]
+script = ExtResource("1_ru6aq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ognc4")
+frame_progress = 0.147327
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5ne2e")
+
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
