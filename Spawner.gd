@@ -7,7 +7,15 @@ extends Area2D
 #Preload the item scene
 var item_preload = preload("res://coin.tscn")
 var fruit_preload = preload("res://fruit.tscn")
-var enemy_preload = preload("res://obstacle.tscn")
+var enemies: Array[PackedScene] = []
+var minEnemySpawnTime: float
+var maxEnemySpawnTime: float
+
+func initialize(floorData: FloorData):
+	minEnemySpawnTime = floorData.min_enemy_spawn_interval
+	maxEnemySpawnTime = floorData.max_enemy_spawn_interval
+	enemies = floorData.enemy_scenes
+	
 
 func _on_coin_timer_timeout():
 	# Spawn a new item at a random position within the Area2D
@@ -38,8 +46,8 @@ func _on_fruit_timer_timeout():
 	fruitTimer.wait_time = randf_range(1.5, 2.5)
 	
 func _on_enemy_timer_timeout():
-
-	var enemy = enemy_preload.instantiate()
+	var enemy_scene = enemies[randi() % enemies.size()]
+	var enemy = enemy_scene.instantiate()
 	var area_extents = $CollisionShape2D.shape.extents
 	enemy.position = Vector2(
 		randf_range(-area_extents.x, area_extents.x),
@@ -47,5 +55,5 @@ func _on_enemy_timer_timeout():
 	)
 	enemy.connect("enemy_touched", Callable(player, "_on_enemy_touched"))
 	add_child(enemy)
-	enemyTimer.wait_time = randf_range(1.5, 2.5)
+	enemyTimer.wait_time = randf_range(minEnemySpawnTime, maxEnemySpawnTime)
 	
