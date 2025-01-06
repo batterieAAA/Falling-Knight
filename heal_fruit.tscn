@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh06wtumg65pu"]
+
+[ext_resource type="Texture2D" uid="uid://cr4qxyl60m0tg" path="res://Assets/brackeys_platformer_assets/sprites/fruit.png" id="1_gf3xp"]
+[ext_resource type="Script" path="res://heal_fruit.gd" id="1_n5aep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsms0"]
+atlas = ExtResource("1_gf3xp")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2i47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsms0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_07k6d"]
+radius = 8.0
+
+[node name="HealFruit" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_n5aep")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_w2i47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_07k6d")
+
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]

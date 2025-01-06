@@ -117,16 +117,19 @@ script = ExtResource("2_vkdfl")
 shape = SubResource("RectangleShape2D_kkjr7")
 
 [node name="CoinTimer" type="Timer" parent="Spawner"]
-wait_time = 2.5
-autostart = true
+one_shot = true
 
 [node name="FruitTimer" type="Timer" parent="Spawner"]
-wait_time = 5.0
-autostart = true
+one_shot = true
 
 [node name="EnemyTimer" type="Timer" parent="Spawner"]
-wait_time = 5.0
-autostart = true
+one_shot = true
+
+[node name="GodFruitTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="HealFruitTimer" type="Timer" parent="Spawner"]
+one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(437, 22)
@@ -236,7 +239,6 @@ scale = Vector2(3, 3)
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_nm03y")
 volume_db = -7.495
-autoplay = true
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("14_do4hm")
@@ -245,3 +247,5 @@ floor_data = ExtResource("11_6lr5a")
 [connection signal="timeout" from="Spawner/CoinTimer" to="Spawner" method="_on_coin_timer_timeout"]
 [connection signal="timeout" from="Spawner/FruitTimer" to="Spawner" method="_on_fruit_timer_timeout"]
 [connection signal="timeout" from="Spawner/EnemyTimer" to="Spawner" method="_on_enemy_timer_timeout"]
+[connection signal="timeout" from="Spawner/GodFruitTimer" to="Spawner" method="_on_god_fruit_timer_timeout"]
+[connection signal="timeout" from="Spawner/HealFruitTimer" to="Spawner" method="_on_heal_fruit_timer_timeout"]

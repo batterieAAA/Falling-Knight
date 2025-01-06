@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://crlqaowo0ia5"]
+
+[ext_resource type="Texture2D" uid="uid://cr4qxyl60m0tg" path="res://Assets/brackeys_platformer_assets/sprites/fruit.png" id="1_u6y8u"]
+[ext_resource type="Script" path="res://godfruit.gd" id="1_vo413"]
+[ext_resource type="Texture2D" uid="uid://duf4lqv2n6j00" path="res://Assets/flare_01_0.png" id="2_2otk3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y6nj2"]
+
+[node name="GodFruit" type="Area2D"]
+script = ExtResource("1_vo413")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2otk3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y6nj2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_u6y8u")
+region_enabled = true
+region_rect = Rect2(19.0273, 16.3496, 10.5402, 15.6504)
+
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]

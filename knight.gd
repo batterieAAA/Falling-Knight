@@ -5,6 +5,11 @@ extends CharacterBody2D
 @onready var camera = $"../Camera2D" 
 @onready var score_label = $"../CanvasLayer2/Label" 
 @onready var knight = $"."
+@onready var healeffect = $HealEffect
+@onready var pickeffect = $GPUParticles2D
+
+@onready var godtimer = $GodTimer
+@onready var damagetimer = $DamageTimer
 
 
 #sounds
@@ -18,10 +23,8 @@ extends CharacterBody2D
 const SPEED = 150
 var speedMod = 1
 var invincible = false  # Variable to track invincibility
+var godinvincible = false
 
-enum {FALL, RUN, DEATH}
-
-var state = FALL
 var score = 0  # Initialize the score
 var health = 3  # Initialize the health
 
@@ -52,15 +55,17 @@ func _physics_process(delta):
 		position.x = min_x
 
 func take_damage():
-	if not invincible:
+	if not invincible && not godinvincible:
 		health -= 1
+		pickeffect.self_modulate = Color(1, 0, 0)
+		pickeffect.emitting = true
 		hurtsound.playing = true
 		ui.update_hearts(health)
 		sprite.modulate = Color(1, 0, 0)  # Red color
 		invincible = true  # Set invincibility to true
 		
 		# Start the DamageTimer
-		$Timer.start()
+		damagetimer.start()
 		
 		if health <= 0:
 			die()
@@ -93,12 +98,37 @@ func _on_quit_button_pressed():
 func _on_coin_collected():
 	score += 1
 	pickupSound.playing = true
+	pickeffect.self_modulate = Color(1, 1, 0)
+	pickeffect.emitting = true
 	score_label.text = str(score)
 
 func _on_fruit_collected():
 	powerupsound.playing = true
+	pickeffect.self_modulate = Color(0, 0, 1)
+	pickeffect.emitting = true
 	sprite.speed_scale += 0.1
 	speedMod += 0.1
+
+func _on_healfruit_collected():
+	powerupsound.playing = true
+	pickeffect.self_modulate = Color(0, 1, 0)
+	healeffect.emitting = true
+	pickeffect.emitting = true
+	if health < 3:
+		health += 1
+		ui.update_hearts(health)
+
+
+func _on_godfruit_collected():
+	powerupsound.playing = true
+	pickeffect.self_modulate = Color(1, 1, 1)
+	pickeffect.emitting = true
+	godinvincible = true
+	$Aura.visible = true
+	godtimer.start()
+
+
+
 
 func _on_enemy_touched():
 	take_damage()  
@@ -106,3 +136,8 @@ func _on_enemy_touched():
 func _on_timer_timeout():
 	sprite.modulate = Color(1, 1, 1)  # Normal color
 	invincible = false  # Revert invincibility to false
+
+
+func _on_god_timer_timeout():
+	godinvincible = false
+	$Aura.visible = false
