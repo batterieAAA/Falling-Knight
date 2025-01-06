@@ -30,7 +30,7 @@ var health = 3  # Initialize the health
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED * speedMod
 		sprite.flip_h = velocity.x < 0

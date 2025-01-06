@@ -89,8 +89,8 @@ script = ExtResource("1_fcx51")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ognc4")
-animation = &"purple"
 autoplay = "purple"
+frame_progress = 0.710422
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5ne2e")
