@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
-@onready var pickupSound = $CoinSound
+
 @onready var sprite = $AnimatedSprite2D
 @onready var camera = $"../Camera2D" 
 @onready var score_label = $"../CanvasLayer2/Label" 
-@onready var powerupsound = $PowerUpSound
 @onready var knight = $"."
+
+
+#sounds
 @onready var hurtsound = $HurtSound
+@onready var powerupsound = $PowerUpSound
+@onready var pickupSound = $CoinSound
 
 @onready var ui = get_node("../CanvasLayer2/HealthUI")  # Adjust this path to match your node structure
 @onready var death_menu = $"../CanvasLayer2/DeathScene"  # Reference to the DeathMenu

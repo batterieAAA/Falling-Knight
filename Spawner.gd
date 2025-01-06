@@ -38,6 +38,7 @@ func _on_fruit_timer_timeout():
 	fruitTimer.wait_time = randf_range(1.5, 2.5)
 	
 func _on_enemy_timer_timeout():
+
 	var enemy = enemy_preload.instantiate()
 	var area_extents = $CollisionShape2D.shape.extents
 	enemy.position = Vector2(
