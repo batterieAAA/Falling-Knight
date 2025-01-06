@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://fdh8v3533t1m"]
+
+[node name="DeathScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="RestartButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 2
+offset_top = 55.0
+offset_right = 69.0
+offset_bottom = 86.0
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 2
+offset_top = 90.0
+offset_right = 69.0
+offset_bottom = 121.0
+text = "Quit"
