@@ -1,34 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://qo5skrbkqb1k"]
+[gd_scene load_steps=5 format=3 uid="uid://qo5skrbkqb1k"]
 
 [ext_resource type="Script" path="res://Spikeballs.gd" id="1_bvelr"]
 [ext_resource type="Texture2D" uid="uid://blprpltesquak" path="res://Assets/spike.png" id="2_e2lpo"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_gw41q"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_08w23"]
-atlas = ExtResource("2_e2lpo")
-region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yb6ct"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_08w23")
+"texture": ExtResource("2_e2lpo")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gw41q"]
+radius = 15.0333
+
 [node name="Spikeballs" type="Area2D"]
 script = ExtResource("1_bvelr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_gw41q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yb6ct")
 frame_progress = 0.665901
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gw41q")
 
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
