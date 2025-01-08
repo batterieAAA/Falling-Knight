@@ -43,6 +43,7 @@ text = "High Score:"
 
 [node name="Score" type="Label" parent="Label"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 164.0
 offset_top = 1.0
 offset_right = 204.0

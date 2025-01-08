@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://b00dmwdeohkiy"]
+
+[ext_resource type="Script" path="res://fireball.gd" id="1_khxew"]
+[ext_resource type="Texture2D" uid="uid://duf4lqv2n6j00" path="res://Assets/flare_01_0.png" id="2_vruj1"]
+
+[sub_resource type="Gradient" id="Gradient_ivog4"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="Curve" id="Curve_wj5fm"]
+min_value = -1.0
+_data = [Vector2(0, -0.010989), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eym2l"]
+radius = 5.09902
+
+[node name="Fireball" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_khxew")
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+amount = 20
+speed_scale = 1.5
+lifetime_randomness = 0.5
+texture = ExtResource("2_vruj1")
+emission_shape = 1
+emission_sphere_radius = 2.0
+gravity = Vector2(0, -20)
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+color = Color(1, 0.32549, 0.0705882, 1)
+color_ramp = SubResource("Gradient_ivog4")
+hue_variation_curve = SubResource("Curve_wj5fm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_eym2l")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_player_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

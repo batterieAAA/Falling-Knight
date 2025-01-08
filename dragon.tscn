@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c05lgsj2swyoi"]
+
+[ext_resource type="Script" path="res://Dragon.gd" id="1_4j2ro"]
+[ext_resource type="PackedScene" uid="uid://b00dmwdeohkiy" path="res://fireball.tscn" id="2_uermj"]
+[ext_resource type="Texture2D" uid="uid://div7cqqiioy5g" path="res://Assets/Dragon.png" id="3_abe32"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fsj5t"]
+radius = 13.0
+
+[node name="Dragon" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_4j2ro")
+projectile_scene = ExtResource("2_uermj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4.76837e-07, 5.96046e-08)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_abe32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fsj5t")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 4.5
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_player_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

@@ -1,19 +1,16 @@
-[gd_resource type="Resource" script_class="FloorData" load_steps=10 format=3 uid="uid://ceruxoqro2glk"]
+[gd_resource type="Resource" script_class="FloorData" load_steps=7 format=3 uid="uid://ceruxoqro2glk"]
 
 [ext_resource type="Script" path="res://FloorData.gd" id="1_tlcn2"]
 [ext_resource type="Texture2D" uid="uid://rnf74w7s5a2r" path="res://Assets/backgrounds/background1.png" id="1_xkehe"]
 [ext_resource type="Texture2D" uid="uid://cfh8p5dvsntbd" path="res://Assets/backgrounds/background2.png" id="2_jb14a"]
 [ext_resource type="Texture2D" uid="uid://rc44msguql3v" path="res://Assets/backgrounds/background3.png" id="3_6fyrh"]
 [ext_resource type="Texture2D" uid="uid://dfgetcguu851j" path="res://Assets/backgrounds/background4a.png" id="4_2yxy5"]
-[ext_resource type="PackedScene" uid="uid://cn3tb8cv3paqd" path="res://obstacle.tscn" id="5_ubv87"]
-[ext_resource type="PackedScene" uid="uid://b85304gms6inv" path="res://obstacle2.tscn" id="6_cxr11"]
-[ext_resource type="PackedScene" uid="uid://dqq5pt2qycncx" path="res://obstacle3.tscn" id="7_si4db"]
-[ext_resource type="PackedScene" path="res://spikeballs.tscn" id="8_lapur"]
+[ext_resource type="PackedScene" uid="uid://c05lgsj2swyoi" path="res://dragon.tscn" id="9_e1l4a"]
 
 [resource]
 script = ExtResource("1_tlcn2")
 time_interval = 20.0
 background_textures = Array[Texture2D]([ExtResource("1_xkehe"), ExtResource("2_jb14a"), ExtResource("3_6fyrh"), ExtResource("4_2yxy5")])
-enemy_scenes = Array[PackedScene]([ExtResource("5_ubv87"), ExtResource("6_cxr11"), ExtResource("7_si4db"), ExtResource("8_lapur")])
+enemy_scenes = Array[PackedScene]([ExtResource("9_e1l4a")])
 min_enemy_spawn_interval = 1.5
 max_enemy_spawn_interval = 2.5
