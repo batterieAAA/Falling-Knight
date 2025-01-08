@@ -11,7 +11,6 @@ extends CharacterBody2D
 @onready var godtimer = $GodTimer
 @onready var damagetimer = $DamageTimer
 
-
 #sounds
 @onready var hurtsound = $HurtSound
 @onready var powerupsound = $PowerUpSound
@@ -75,6 +74,7 @@ func die():
 	print("Player has died")
 	# Display the death menu
 	death_menu.visible = true
+	death_menu.showScore(score)
 	
 	# Connect button signals using Callable
 	death_menu.get_node("RestartButton").connect("pressed", Callable(self, "_on_restart_button_pressed"))
@@ -126,9 +126,6 @@ func _on_godfruit_collected():
 	godinvincible = true
 	$Aura.visible = true
 	godtimer.start()
-
-
-
 
 func _on_enemy_touched():
 	take_damage()  

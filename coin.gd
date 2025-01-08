@@ -2,9 +2,6 @@ extends Area2D
 
 @export var speed = 100.0
 
-
-
-
 func _process(delta):
 	# Move the coin upwards
 	position.y -= speed * delta
@@ -12,7 +9,6 @@ func _process(delta):
 signal coin_collected 
 
 func _on_coin_body_entered(body): 
-
 	print("oui")
 
 
