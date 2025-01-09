@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bx37itkfim3pw"]
+[gd_scene load_steps=28 format=3 uid="uid://bx37itkfim3pw"]
 
 [ext_resource type="Script" path="res://knight.gd" id="1_4csyi"]
 [ext_resource type="Texture2D" uid="uid://cwg0bhergmjwm" path="res://Assets/brackeys_platformer_assets/sprites/knight.png" id="1_c4uhp"]
@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://dnyn0ks7nvjcb" path="res://Assets/brackeys_platformer_assets/sounds/power_up.wav" id="4_45am3"]
 [ext_resource type="AudioStream" uid="uid://bgpp56slccmlp" path="res://Assets/brackeys_platformer_assets/sounds/hurt.wav" id="5_ltmou"]
 [ext_resource type="Texture2D" uid="uid://dnrnbrw3tu6nw" path="res://Assets/heart sprite/Heart.png" id="6_di1gs"]
-[ext_resource type="Shader" path="res://holy.gdshader" id="7_vy6mv"]
 [ext_resource type="Texture2D" uid="uid://duf4lqv2n6j00" path="res://Assets/flare_01_0.png" id="9_eyhag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fv53v"]
@@ -144,20 +143,6 @@ radius = 7.0
 height = 18.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ycyda"]
-shader = ExtResource("7_vy6mv")
-shader_parameter/angle = 0.0
-shader_parameter/position = 0.0
-shader_parameter/spread = 1.0
-shader_parameter/cutoff = 0.0550001
-shader_parameter/falloff = 0.548
-shader_parameter/edge_fade = 0.15
-shader_parameter/speed = 1.0
-shader_parameter/ray1_density = 8.0
-shader_parameter/ray2_density = 30.0
-shader_parameter/ray2_intensity = 0.3
-shader_parameter/color = Color(1, 0.9, 0.65, 0.8)
-shader_parameter/hdr = false
-shader_parameter/seed = 5.0
 
 [sub_resource type="Gradient" id="Gradient_u1vbj"]
 offsets = PackedFloat32Array(0, 0.486667, 1)

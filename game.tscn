@@ -1,9 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://7vmynjwuhmbj"]
+[gd_scene load_steps=34 format=3 uid="uid://7vmynjwuhmbj"]
 
 [ext_resource type="Script" path="res://Spawner.gd" id="2_vkdfl"]
 [ext_resource type="Script" path="res://ParallaxMovement.gd" id="3_hdrdn"]
+[ext_resource type="Texture2D" uid="uid://rnf74w7s5a2r" path="res://Assets/backgrounds/background1.png" id="4_2046c"]
+[ext_resource type="Texture2D" uid="uid://cfh8p5dvsntbd" path="res://Assets/backgrounds/background2.png" id="5_wb55s"]
 [ext_resource type="PackedScene" uid="uid://bx37itkfim3pw" path="res://knight.tscn" id="5_xade8"]
+[ext_resource type="Texture2D" uid="uid://rc44msguql3v" path="res://Assets/backgrounds/background3.png" id="6_ly4tx"]
 [ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_rqegx"]
+[ext_resource type="Texture2D" uid="uid://dfgetcguu851j" path="res://Assets/backgrounds/background4a.png" id="7_d5dpd"]
 [ext_resource type="Texture2D" uid="uid://bqdwrug0eeofu" path="res://Assets/brackeys_platformer_assets/sprites/coin.png" id="9_1w86k"]
 [ext_resource type="Script" path="res://HealthUI.gd" id="10_16hlk"]
 [ext_resource type="Texture2D" uid="uid://dnrnbrw3tu6nw" path="res://Assets/heart sprite/Heart.png" id="10_iuvd1"]
@@ -11,6 +15,10 @@
 [ext_resource type="Resource" uid="uid://ceruxoqro2glk" path="res://FloorData/Floor1.tres" id="11_6lr5a"]
 [ext_resource type="PackedScene" uid="uid://fdh8v3533t1m" path="res://DeathScene.tscn" id="13_f4xkt"]
 [ext_resource type="Script" path="res://GameManager.gd" id="14_do4hm"]
+[ext_resource type="Resource" uid="uid://dotkejtiinpms" path="res://FloorData/Floor2.tres" id="15_0rng5"]
+[ext_resource type="Resource" uid="uid://2qiu0nsucek1" path="res://FloorData/Floor5.tres" id="15_5a5cc"]
+[ext_resource type="Resource" uid="uid://c52ea0ed6gyla" path="res://FloorData/Floor3.tres" id="15_buxp3"]
+[ext_resource type="Resource" uid="uid://x17a8laq3adw" path="res://FloorData/Floor4.tres" id="15_nkxun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkjr7"]
 size = Vector2(200, 50)
@@ -150,6 +158,7 @@ motion_scale = Vector2(0, 0)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("4_2046c")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
@@ -157,6 +166,7 @@ motion_scale = Vector2(0.25, 0.25)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("5_wb55s")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
@@ -164,6 +174,7 @@ motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("6_ly4tx")
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
@@ -171,6 +182,7 @@ motion_scale = Vector2(0.75, 0.75)
 motion_mirroring = Vector2(0, 480)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("7_d5dpd")
 centered = false
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -242,10 +254,14 @@ volume_db = -7.495
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("14_do4hm")
-floor_data = ExtResource("11_6lr5a")
+all_floor_data = Array[Resource("res://FloorData.gd")]([ExtResource("11_6lr5a"), ExtResource("15_0rng5"), ExtResource("15_buxp3"), ExtResource("15_nkxun"), ExtResource("15_5a5cc")])
+
+[node name="Timer" type="Timer" parent="GameManager"]
+wait_time = 20.0
 
 [connection signal="timeout" from="Spawner/CoinTimer" to="Spawner" method="_on_coin_timer_timeout"]
 [connection signal="timeout" from="Spawner/FruitTimer" to="Spawner" method="_on_fruit_timer_timeout"]
 [connection signal="timeout" from="Spawner/EnemyTimer" to="Spawner" method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="Spawner/GodFruitTimer" to="Spawner" method="_on_god_fruit_timer_timeout"]
 [connection signal="timeout" from="Spawner/HealFruitTimer" to="Spawner" method="_on_heal_fruit_timer_timeout"]
+[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]

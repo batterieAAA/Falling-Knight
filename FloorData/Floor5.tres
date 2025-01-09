@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FloorData" load_steps=7 format=3 uid="uid://2qiu0nsucek1"]
+
+[ext_resource type="PackedScene" uid="uid://c05lgsj2swyoi" path="res://dragon.tscn" id="5_bxng6"]
+[ext_resource type="PackedScene" uid="uid://qo5skrbkqb1k" path="res://spikeballs.tscn" id="5_og1en"]
+[ext_resource type="PackedScene" uid="uid://cn3tb8cv3paqd" path="res://obstacle.tscn" id="6_dso1l"]
+[ext_resource type="Script" path="res://FloorData.gd" id="6_vvals"]
+[ext_resource type="PackedScene" uid="uid://b85304gms6inv" path="res://obstacle2.tscn" id="7_hhn8r"]
+[ext_resource type="PackedScene" uid="uid://dqq5pt2qycncx" path="res://obstacle3.tscn" id="8_uvrxq"]
+
+[resource]
+script = ExtResource("6_vvals")
+time_interval = 20.0
+background_color = Color(0.345098, 0, 0, 1)
+enemy_scenes = Array[PackedScene]([ExtResource("5_og1en"), ExtResource("6_dso1l"), ExtResource("7_hhn8r"), ExtResource("8_uvrxq"), ExtResource("5_bxng6")])
+min_enemy_spawn_interval = 1.5
+max_enemy_spawn_interval = 2.5

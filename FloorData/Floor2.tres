@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FloorData" load_steps=4 format=3 uid="uid://dotkejtiinpms"]
+
+[ext_resource type="PackedScene" uid="uid://qo5skrbkqb1k" path="res://spikeballs.tscn" id="5_oym1w"]
+[ext_resource type="PackedScene" uid="uid://cn3tb8cv3paqd" path="res://obstacle.tscn" id="6_m3eh8"]
+[ext_resource type="Script" path="res://FloorData.gd" id="6_ok16k"]
+
+[resource]
+script = ExtResource("6_ok16k")
+time_interval = 20.0
+background_color = Color(0.494118, 0.647059, 0.729412, 1)
+enemy_scenes = Array[PackedScene]([ExtResource("5_oym1w"), ExtResource("6_m3eh8")])
+min_enemy_spawn_interval = 1.5
+max_enemy_spawn_interval = 2.5
