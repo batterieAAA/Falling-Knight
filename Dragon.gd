@@ -35,12 +35,5 @@ func _on_player_body_entered(body):
 func _on_timer_timeout():
 	shoot_projectile()
 
-func is_outside_screen():
-	var camera_position = camera.global_position
-	var viewport_size = get_viewport().get_visible_rect().size
-	var zoom_factor = camera.zoom
-
-
-
 func _on_timer_2_timeout():
 	queue_free()

@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("6_8kv0s")
-floor_spawn_time = 0.0
+floor_spawn_time = 20.0
 background_color = Color(0.534411, 0.00369957, 0.501056, 1)
 enemy_scenes = Array[PackedScene]([ExtResource("5_4qdmt"), ExtResource("6_14v3t"), ExtResource("7_d2igx"), ExtResource("8_wwj4n")])
 min_enemy_spawn_interval = 1.5
