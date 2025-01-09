@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://7vmynjwuhmbj"]
+[gd_scene load_steps=35 format=3 uid="uid://7vmynjwuhmbj"]
 
 [ext_resource type="Script" path="res://Spawner.gd" id="2_vkdfl"]
 [ext_resource type="Script" path="res://ParallaxMovement.gd" id="3_hdrdn"]
@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://2qiu0nsucek1" path="res://FloorData/Floor5.tres" id="15_5a5cc"]
 [ext_resource type="Resource" uid="uid://c52ea0ed6gyla" path="res://FloorData/Floor3.tres" id="15_buxp3"]
 [ext_resource type="Resource" uid="uid://x17a8laq3adw" path="res://FloorData/Floor4.tres" id="15_nkxun"]
+[ext_resource type="PackedScene" uid="uid://ckaj56lypt8bb" path="res://FloorData/Platform1.tscn" id="20_d3gj5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkjr7"]
 size = Vector2(200, 50)
@@ -258,6 +259,10 @@ all_floor_data = Array[Resource("res://FloorData.gd")]([ExtResource("11_6lr5a"),
 
 [node name="Timer" type="Timer" parent="GameManager"]
 wait_time = 20.0
+
+[node name="Platform1" parent="GameManager" instance=ExtResource("20_d3gj5")]
+position = Vector2(439, 379)
+scale = Vector2(6, 2)
 
 [connection signal="timeout" from="Spawner/CoinTimer" to="Spawner" method="_on_coin_timer_timeout"]
 [connection signal="timeout" from="Spawner/FruitTimer" to="Spawner" method="_on_fruit_timer_timeout"]

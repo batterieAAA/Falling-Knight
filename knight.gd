@@ -24,6 +24,8 @@ var speedMod = 1
 var invincible = false  # Variable to track invincibility
 var godinvincible = false
 
+var hasgodray = false
+
 var nbFruit = 0
 var score = 0  # Initialize the score
 var health = 3  # Initialize the health
@@ -140,3 +142,9 @@ func _on_timer_timeout():
 func _on_god_timer_timeout():
 	godinvincible = false
 	$Aura.visible = false
+
+func godray():
+	$ColorRect.visible = true
+
+func nogodray():
+	$ColorRect.visible = false

@@ -4,11 +4,15 @@ extends Node
 @onready var spawner = $"../Spawner" 
 @onready var background = $"../CanvasLayer/ParallaxBackground"
 @onready var player = $"../Knight"
+@onready var platform_1 = $Platform1
 
 var floorIndex = 0
 var current_floor_data : FloorData
 func _ready():
 	init()
+
+func _process(delta):
+	fruitcheck()
 
 func switch_floor():
 	floorIndex += 1
@@ -37,8 +41,15 @@ func init():
 	spawner.initialize(current_floor_data)
 
 func _on_timer_timeout():
-	#TODO: Spawn le floor et check pour le nbFruit quand le body touche au floor
+	var tween = create_tween()
+	tween.tween_property(platform_1, "position", Vector2(439, 59), 0.5)
 	if player.nbFruit >= current_floor_data.fruit_nb_required:
 		switch_floor()
 	else:
 		player.die()
+
+func fruitcheck():
+	if player.nbFruit >= current_floor_data.fruit_nb_required:
+		player.godray()
+	else:
+		player.nogodray()
