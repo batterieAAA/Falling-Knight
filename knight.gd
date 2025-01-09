@@ -24,6 +24,7 @@ var speedMod = 1
 var invincible = false  # Variable to track invincibility
 var godinvincible = false
 
+var nbFruit = 0
 var score = 0  # Initialize the score
 var health = 3  # Initialize the health
 
@@ -108,6 +109,7 @@ func _on_fruit_collected():
 	pickeffect.emitting = true
 	sprite.speed_scale += 0.1
 	speedMod += 0.1
+	nbFruit += 1
 
 func _on_healfruit_collected():
 	powerupsound.playing = true
