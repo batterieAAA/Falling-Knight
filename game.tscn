@@ -19,7 +19,7 @@
 [ext_resource type="Resource" uid="uid://2qiu0nsucek1" path="res://FloorData/Floor5.tres" id="15_5a5cc"]
 [ext_resource type="Resource" uid="uid://c52ea0ed6gyla" path="res://FloorData/Floor3.tres" id="15_buxp3"]
 [ext_resource type="Resource" uid="uid://x17a8laq3adw" path="res://FloorData/Floor4.tres" id="15_nkxun"]
-[ext_resource type="PackedScene" path="res://FloorData/Platform1.tscn" id="20_d3gj5"]
+[ext_resource type="PackedScene" uid="uid://ckaj56lypt8bb" path="res://FloorData/Platform1.tscn" id="20_d3gj5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkjr7"]
 size = Vector2(200, 50)
@@ -267,6 +267,22 @@ scale = Vector2(6, 2)
 
 [node name="Timer2" type="Timer" parent="GameManager"]
 one_shot = true
+
+[node name="LeftButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+offset_left = 64.0
+offset_top = -620.0
+offset_right = 438.0
+offset_bottom = 661.0
+
+[node name="RightButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+offset_left = 438.0
+offset_top = -618.0
+offset_right = 785.0
+offset_bottom = 663.0
 
 [connection signal="timeout" from="Spawner/CoinTimer" to="Spawner" method="_on_coin_timer_timeout"]
 [connection signal="timeout" from="Spawner/FruitTimer" to="Spawner" method="_on_fruit_timer_timeout"]

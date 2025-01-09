@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @onready var sprite = $AnimatedSprite2D
 @onready var camera = $"../Camera2D" 
 @onready var score_label = $"../CanvasLayer2/Label" 
@@ -11,7 +10,7 @@ extends CharacterBody2D
 @onready var godtimer = $GodTimer
 @onready var damagetimer = $DamageTimer
 
-#sounds
+# sounds
 @onready var hurtsound = $HurtSound
 @onready var powerupsound = $PowerUpSound
 @onready var pickupSound = $CoinSound
@@ -32,10 +31,40 @@ var hasgodray = false
 var nbFruit = 0
 var score = 0  # Initialize the score
 var health = 3  # Initialize the health
+@onready var left_button = $"../LeftButton"
+@onready var right_button = $"../RightButton"
+
+var left_is_pressed = false
+var right_is_pressed = false
+
+func _ready():
+	# Connect button signals
+	left_button.connect("button_down", Callable(self, "_on_left_button_pressed"))
+	left_button.connect("button_up", Callable(self, "_on_left_button_released"))
+	right_button.connect("button_down", Callable(self, "_on_right_button_pressed"))
+	right_button.connect("button_up", Callable(self, "_on_right_button_released"))
+
+func _on_left_button_pressed():
+	left_is_pressed = true
+
+func _on_left_button_released():
+	left_is_pressed = false
+
+func _on_right_button_pressed():
+	right_is_pressed = true
+
+func _on_right_button_released():
+	right_is_pressed = false
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("left", "right")
+	if direction == 0:
+		if left_is_pressed:
+			direction = -1
+		elif right_is_pressed:
+			direction = 1
+
 	if direction:
 		velocity.x = direction * SPEED * speedMod
 		sprite.flip_h = velocity.x < 0
@@ -60,7 +89,7 @@ func _physics_process(delta):
 		position.x = min_x
 
 func take_damage():
-	if not invincible && not godinvincible && can_interact:
+	if not invincible and not godinvincible and can_interact:
 		health -= 1
 		pickeffect.self_modulate = Color(1, 0, 0)
 		pickeffect.emitting = true
@@ -68,10 +97,10 @@ func take_damage():
 		ui.update_hearts(health)
 		sprite.modulate = Color(1, 0, 0)  # Red color
 		invincible = true  # Set invincibility to true
-		
+
 		# Start the DamageTimer
 		damagetimer.start()
-		
+
 		if health <= 0:
 			die()
 
@@ -81,11 +110,11 @@ func die():
 	# Display the death menu
 	death_menu.visible = true
 	death_menu.showScore(score)
-	
+
 	# Connect button signals using Callable
 	death_menu.get_node("RestartButton").connect("pressed", Callable(self, "_on_restart_button_pressed"))
 	death_menu.get_node("QuitButton").connect("pressed", Callable(self, "_on_quit_button_pressed"))
-	
+
 	# Pause the game
 	get_tree().paused = true
 
@@ -94,7 +123,6 @@ func _on_restart_button_pressed():
 	print("restart")
 	get_tree().paused = false
 	get_tree().reload_current_scene()
-
 
 func _on_quit_button_pressed():
 	# Quit the game
@@ -131,7 +159,6 @@ func _on_healfruit_collected():
 		health += 1
 		ui.update_hearts(health)
 
-
 func _on_godfruit_collected():
 	if not can_interact:
 		pass
@@ -143,12 +170,11 @@ func _on_godfruit_collected():
 	godtimer.start()
 
 func _on_enemy_touched():
-	take_damage()  
+	take_damage()
 
 func _on_timer_timeout():
 	sprite.modulate = Color(1, 1, 1)  # Normal color
 	invincible = false  # Revert invincibility to false
-
 
 func _on_god_timer_timeout():
 	godinvincible = false
@@ -159,7 +185,7 @@ func godray():
 
 func nogodray():
 	$ColorRect.visible = false
-	
+
 func reset_new_floor():
 	position = initial_position
 	nbFruit = 0
