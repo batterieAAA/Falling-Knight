@@ -5,6 +5,7 @@ extends Node
 @onready var background = $"../CanvasLayer/ParallaxBackground"
 @onready var player = $"../Knight"
 @onready var platform_1 = $Platform1
+@onready var platform_initial_position = platform_1.position
 
 var floorIndex = 0
 var current_floor_data : FloorData
@@ -15,6 +16,8 @@ func _process(delta):
 	fruitcheck()
 
 func switch_floor():
+	platform_1.position = platform_initial_position
+	player.reset_new_floor()
 	floorIndex += 1
 	init()
 	
@@ -35,21 +38,34 @@ func init():
 	var bg4 = background.get_node("ParallaxLayer4/Sprite2D")
 	bg4.modulate = current_floor_data.background_color
 	
+	platform_1.modulate = current_floor_data.background_color
 
 	$Timer.wait_time = current_floor_data.floor_spawn_time
 	$Timer.start()
 	spawner.initialize(current_floor_data)
 
 func _on_timer_timeout():
+	player.can_interact = false
 	var tween = create_tween()
-	tween.tween_property(platform_1, "position", Vector2(439, 59), 0.5)
-	if player.nbFruit >= current_floor_data.fruit_nb_required:
-		switch_floor()
-	else:
-		player.die()
+	tween.set_parallel(true)
+	tween.tween_property(platform_1, "position", Vector2(439, 59), 1) 
+	tween.tween_property(player, "position", Vector2(439, 59), 1) 
+
+	print("timer2_start")
+	$Timer2.wait_time = 1.2
+	$Timer2.start()
 
 func fruitcheck():
 	if player.nbFruit >= current_floor_data.fruit_nb_required:
 		player.godray()
 	else:
 		player.nogodray()
+
+func _on_timer_2_timeout():
+	$Timer2.stop()
+	print("timer2_timeout")
+	if player.nbFruit >= current_floor_data.fruit_nb_required:
+		switch_floor()
+	else:
+		player.die()
+	player.can_interact = true

@@ -12,10 +12,6 @@ func _process(delta):
 signal healfruit_collected
 
 func _on_coin_body_entered(body): 
-
-	print("healfruit")
-
-
 	if body is CharacterBody2D: 
 		emit_signal("healfruit_collected") 
 		queue_free() # Remove the coin from the scene

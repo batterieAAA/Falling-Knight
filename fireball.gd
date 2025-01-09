@@ -18,7 +18,6 @@ func _process(delta):
 signal enemy_touched
 
 func _on_player_body_entered(body):
-	print("ouch")
 	if body is CharacterBody2D:
 		emit_signal("enemy_touched")
 		queue_free() # Remove the coin from the scene

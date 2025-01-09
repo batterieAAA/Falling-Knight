@@ -19,10 +19,13 @@ extends CharacterBody2D
 @onready var ui = get_node("../CanvasLayer2/HealthUI")  # Adjust this path to match your node structure
 @onready var death_menu = $"../CanvasLayer2/DeathScene"  # Reference to the DeathMenu
 
+@onready var initial_position = position
+
 const SPEED = 150
 var speedMod = 1
 var invincible = false  # Variable to track invincibility
 var godinvincible = false
+var can_interact = true
 
 var hasgodray = false
 
@@ -57,7 +60,7 @@ func _physics_process(delta):
 		position.x = min_x
 
 func take_damage():
-	if not invincible && not godinvincible:
+	if not invincible && not godinvincible && can_interact:
 		health -= 1
 		pickeffect.self_modulate = Color(1, 0, 0)
 		pickeffect.emitting = true
@@ -99,6 +102,8 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 
 func _on_coin_collected():
+	if not can_interact:
+		pass
 	score += 1
 	pickupSound.playing = true
 	pickeffect.self_modulate = Color(1, 1, 0)
@@ -106,6 +111,8 @@ func _on_coin_collected():
 	score_label.text = str(score)
 
 func _on_fruit_collected():
+	if not can_interact:
+		pass
 	powerupsound.playing = true
 	pickeffect.self_modulate = Color(0, 0, 1)
 	pickeffect.emitting = true
@@ -114,6 +121,8 @@ func _on_fruit_collected():
 	nbFruit += 1
 
 func _on_healfruit_collected():
+	if not can_interact:
+		pass
 	powerupsound.playing = true
 	pickeffect.self_modulate = Color(0, 1, 0)
 	healeffect.emitting = true
@@ -124,6 +133,8 @@ func _on_healfruit_collected():
 
 
 func _on_godfruit_collected():
+	if not can_interact:
+		pass
 	powerupsound.playing = true
 	pickeffect.self_modulate = Color(1, 1, 1)
 	pickeffect.emitting = true
@@ -148,3 +159,7 @@ func godray():
 
 func nogodray():
 	$ColorRect.visible = false
+	
+func reset_new_floor():
+	position = initial_position
+	nbFruit = 0
