@@ -13,9 +13,6 @@ func _ready():
 
 func _process(delta):
 	position.y -= speed * delta
-	#get_player_position()
-	if is_outside_screen():
-		queue_free()
 
 func shoot_projectile():
 	var projectile = projectile_scene.instantiate()

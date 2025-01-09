@@ -15,3 +15,4 @@ enemy_scenes = Array[PackedScene]([ExtResource("5_og1en"), ExtResource("6_dso1l"
 min_enemy_spawn_interval = 1.5
 max_enemy_spawn_interval = 2.5
 fruit_nb_required = 25.0
+speed = 200.0

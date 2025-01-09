@@ -8,3 +8,4 @@ class_name FloorData
 @export var min_enemy_spawn_interval: float
 @export var max_enemy_spawn_interval: float
 @export var fruit_nb_required: float
+@export var speed: float
