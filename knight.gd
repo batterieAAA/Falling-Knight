@@ -58,6 +58,9 @@ func _on_right_button_released():
 	right_is_pressed = false
 
 func _physics_process(delta):
+	if not can_interact:
+		pass
+		
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("left", "right")
 	if direction == 0:
