@@ -440,6 +440,7 @@ emission_sphere_radius = 13.92
 gravity = Vector2(0, -200)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 texture_filter = 1
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_wf4b1")

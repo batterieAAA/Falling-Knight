@@ -110,7 +110,11 @@ func take_damage():
 
 func die():
 	# Handle player death logic here
-	print("Player has died")
+	playDeathAnimation()
+	# Pause the game
+	get_tree().paused = true
+	
+	await get_tree().create_timer(1).timeout
 	# Display the death menu
 	death_menu.visible = true
 	death_menu.showScore(score)
@@ -119,8 +123,7 @@ func die():
 	death_menu.get_node("RestartButton").connect("pressed", Callable(self, "_on_restart_button_pressed"))
 	death_menu.get_node("QuitButton").connect("pressed", Callable(self, "_on_quit_button_pressed"))
 
-	# Pause the game
-	get_tree().paused = true
+
 
 func _on_restart_button_pressed():
 	# Restart the game
@@ -193,7 +196,7 @@ func reset_new_floor():
 	nbFruit = 0
 
 
-func death():
+func playDeathAnimation():
 	sprite.animation = "death"
 
 
