@@ -1,29 +1,43 @@
 extends Node
 
+var greenfruit: int
 
-var godfruit : int
-var greenfruit : int
-var healfruit : int
-var holypieces : int
+var level1req: bool = false
+var level2req: bool = false
+var level3req: bool = false
+var level4req: bool = false
+var level5req: bool = false
 
-var level1req : bool = false
-var level2req : bool = false
-var level3req : bool = false
-var level4req : bool = false
-var level5req : bool = false
+
+
+
+func reset():
+	greenfruit = 0
+	level1req = false
+	level2req = false
+	level3req = false
+	level4req = false
+	level5req = false
 
 func level1check():
-	if holypieces <= 1:
+	if greenfruit >= 5:
+		print("you got it bro")
 		level1req = true
+		
 func level2check():
-	if holypieces <= 2:
+	if greenfruit >= 7:
 		level2req = true
+		
 func level3check():
-	if holypieces <= 3:
+	if greenfruit >= 9:
 		level3req = true
+		
 func level4check():
-	if holypieces <= 4:
+	if greenfruit >= 11:
 		level4req = true
+		
 func level5check():
-	if holypieces <= 5:
+	if greenfruit >= 15:
 		level5req = true
+
+

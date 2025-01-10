@@ -119,3 +119,16 @@ func SetTimers():
 	fruitTimer.wait_time = randf_range(1.5 * timerMod, 2.5 * timerMod)
 	fruitTimer.start()
 	
+func StopSpawn():
+	coinTimer.stop() 
+	fruitTimer.stop() 
+	enemyTimer.stop() 
+	healfruitTimer.stop() 
+	godfruittimer.stop()
+
+func resume_spawn(): 
+	coinTimer.start() 
+	fruitTimer.start() 
+	enemyTimer.start() 
+	healfruitTimer.start() 
+	godfruittimer.start()

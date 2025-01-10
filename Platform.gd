@@ -1,7 +1,13 @@
 extends Area2D
+@onready var animation_player = $AnimationPlayer
 
 
-signal levelcomplete
+@onready var breakaudio = $AudioStreamPlayer
 
-func _on_body_entered(body):
-	levelcomplete.emit()
+
+func nexttlevel():
+	animation_player.play("platformbreak")
+	breakaudio.play()
+
+
+

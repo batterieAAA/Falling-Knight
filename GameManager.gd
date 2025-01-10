@@ -48,24 +48,31 @@ func _on_timer_timeout():
 	player.can_interact = false
 	var tween = create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(platform_1, "position", Vector2(439, 59), 1) 
 	tween.tween_property(player, "position", Vector2(439, 59), 1) 
-
+	tween.tween_property(platform_1, "position", Vector2(439, 78), 1) 
 	print("timer2_start")
-	$Timer2.wait_time = 1.2
+	player.animation_player.play("breakfloor")
+	$Timer2.wait_time = 2
 	$Timer2.start()
+
+	spawner.StopSpawn()
 
 func fruitcheck():
 	if player.nbFruit >= current_floor_data.fruit_nb_required:
 		player.godray()
-	else:
-		player.nogodray()
 
 func _on_timer_2_timeout():
 	$Timer2.stop()
+	platform_1.animation_player.play("platformbreak")
 	print("timer2_timeout")
+	platform_1.nexttlevel()
 	if player.nbFruit >= current_floor_data.fruit_nb_required:
 		switch_floor()
+		platform_1.animation_player.play("RESET")
+		player.animation_player.play("RESET")
+		spawner.resume_spawn()
+		player.godray()
 	else:
 		player.die()
+
 	player.can_interact = true
