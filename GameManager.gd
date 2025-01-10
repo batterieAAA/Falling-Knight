@@ -77,7 +77,7 @@ func _on_timer_2_timeout():
 		platform_1.animation_player.play("RESET")
 		player.animation_player.play("RESET")
 		spawner.resume_spawn()
-		player.godray()
+		player.nogodray()
 	else:
 		player.die()
 

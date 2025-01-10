@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var healeffect = $HealEffect
 @onready var pickeffect = $GPUParticles2D
 @onready var animation_player = $AnimationPlayer
+@onready var gamemanager = $"../GameManager"
 
 @onready var godtimer = $GodTimer
 @onready var damagetimer = $DamageTimer
@@ -153,8 +154,9 @@ func _on_fruit_collected():
 	pickeffect.emitting = true
 	sprite.speed_scale += 0.1
 	speedMod += 0.1
-	Datamanager.greenfruit += 1
 	nbFruit += 1
+	gamemanager.fruitcheck()
+	
 
 func _on_healfruit_collected():
 	if not can_interact:
@@ -189,11 +191,14 @@ func _on_god_timer_timeout():
 	$Aura.visible = false
 
 func godray():
-	$Aura.visible = !$Aura.visible
+	$Aura.visible = true
+func nogodray():
+	$Aura.visible = false
 
 func reset_new_floor():
 	position = initial_position
 	nbFruit = 0
+	godray()
 
 
 func playDeathAnimation():

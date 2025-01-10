@@ -15,10 +15,6 @@ run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Assets/Dragon.png"
 
-[autoload]
-
-Datamanager="*res://core/datamanager.gd"
-
 [display]
 
 window/size/viewport_width=720
