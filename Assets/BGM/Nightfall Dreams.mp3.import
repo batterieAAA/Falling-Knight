@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://h34q4lllsacw"
+path="res://.godot/imported/Nightfall Dreams.mp3-3767f163adaca872c3e555e79aba3524.mp3str"
+
+[deps]
+
+source_file="res://Assets/BGM/Nightfall Dreams.mp3"
+dest_files=["res://.godot/imported/Nightfall Dreams.mp3-3767f163adaca872c3e555e79aba3524.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

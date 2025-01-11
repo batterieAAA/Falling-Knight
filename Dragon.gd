@@ -16,6 +16,7 @@ func _process(delta):
 
 func shoot_projectile():
 	var projectile = projectile_scene.instantiate()
+	$AudioStreamPlayer.playing = true
 	projectile.position = marker_2d.position
 	projectile.direction = (player.global_position - marker_2d.global_position).normalized()
 	add_child(projectile)

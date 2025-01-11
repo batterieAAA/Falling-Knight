@@ -17,6 +17,7 @@ func _on_start_game_button_pressed():
 	timer.start()
 	camera_2d.shake_screen()
 	animation_player.play("intro")
+	$AudioStreamPlayer.playing = true
 	
 
 

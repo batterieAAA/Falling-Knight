@@ -11,9 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bqdwrug0eeofu" path="res://Assets/brackeys_platformer_assets/sprites/coin.png" id="9_1w86k"]
 [ext_resource type="Script" path="res://HealthUI.gd" id="10_16hlk"]
 [ext_resource type="Texture2D" uid="uid://dnrnbrw3tu6nw" path="res://Assets/heart sprite/Heart.png" id="10_iuvd1"]
-[ext_resource type="AudioStream" uid="uid://csqnu53hfstf6" path="res://Assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="10_nm03y"]
 [ext_resource type="Resource" uid="uid://ceruxoqro2glk" path="res://FloorData/Floor1.tres" id="11_6lr5a"]
 [ext_resource type="PackedScene" uid="uid://fdh8v3533t1m" path="res://DeathScene.tscn" id="13_f4xkt"]
+[ext_resource type="AudioStream" uid="uid://cd0pcaauuyktm" path="res://Assets/BGM/Nightfall Dreams(1).mp3" id="13_fc74v"]
 [ext_resource type="Script" path="res://GameManager.gd" id="14_do4hm"]
 [ext_resource type="Resource" uid="uid://dotkejtiinpms" path="res://FloorData/Floor2.tres" id="15_0rng5"]
 [ext_resource type="Resource" uid="uid://2qiu0nsucek1" path="res://FloorData/Floor5.tres" id="15_5a5cc"]
@@ -250,8 +250,9 @@ grow_vertical = 2
 scale = Vector2(3, 3)
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_nm03y")
+stream = ExtResource("13_fc74v")
 volume_db = -7.495
+autoplay = true
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("14_do4hm")

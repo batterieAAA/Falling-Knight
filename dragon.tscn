@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c05lgsj2swyoi"]
+[gd_scene load_steps=6 format=3 uid="uid://c05lgsj2swyoi"]
 
 [ext_resource type="Script" path="res://Dragon.gd" id="1_4j2ro"]
 [ext_resource type="PackedScene" uid="uid://b00dmwdeohkiy" path="res://fireball.tscn" id="2_uermj"]
 [ext_resource type="Texture2D" uid="uid://div7cqqiioy5g" path="res://Assets/Dragon.png" id="3_abe32"]
+[ext_resource type="AudioStream" uid="uid://3dwoyeb326c6" path="res://Assets/brackeys_platformer_assets/sounds/explosion.wav" id="4_4wbva"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fsj5t"]
 radius = 13.0
@@ -29,6 +30,10 @@ autostart = true
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 4.5
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4wbva")
+pitch_scale = 0.68
 
 [connection signal="body_entered" from="." to="." method="_on_player_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
