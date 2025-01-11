@@ -19,6 +19,8 @@ var speed : float = 100
 var timerMod :float = speed/100
 
 func _ready():
+	$"../AnimationPlayer".play("main_menu_intro")
+	await get_tree().create_timer(1).timeout
 	SetTimers()
 
 func initialize(floorData: FloorData):

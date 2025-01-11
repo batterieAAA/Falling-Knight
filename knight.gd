@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var pickeffect = $GPUParticles2D
 @onready var animation_player = $AnimationPlayer
 @onready var gamemanager = $"../GameManager"
+@onready var game_animation_player = $"../AnimationPlayer"
 
 @onready var godtimer = $GodTimer
 @onready var damagetimer = $DamageTimer
@@ -129,6 +130,10 @@ func die():
 func _on_restart_button_pressed():
 	# Restart the game
 	print("restart")
+
+	game_animation_player.play("main_menu_outro")
+	await get_tree().create_timer(1).timeout
+	
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
