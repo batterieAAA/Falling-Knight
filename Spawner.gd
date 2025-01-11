@@ -45,7 +45,7 @@ func _on_coin_timer_timeout():
 
 	# Connect the coin_collected signal to the player 
 	item.connect("coin_collected", Callable(player, "_on_coin_collected"))
-	coinTimer.wait_time = randf_range(1 * timerMod, 2 * timerMod)
+	coinTimer.wait_time = randf_range(0.5 * timerMod, 1 * timerMod)
 	coinTimer.start()
 	add_child(item)
 
@@ -61,7 +61,7 @@ func _on_fruit_timer_timeout():
 	fruit.speed = speed
 	fruit.connect("fruit_collected", Callable(player, "_on_fruit_collected"))
 	add_child(fruit)
-	fruitTimer.wait_time = randf_range(1.5 * timerMod, 2.5 * timerMod)
+	fruitTimer.wait_time = 2.5
 	fruitTimer.start()
 	
 func _on_enemy_timer_timeout():
@@ -89,7 +89,7 @@ func _on_heal_fruit_timer_timeout():
 	)
 	healfruit.connect("healfruit_collected", Callable(player, "_on_healfruit_collected"))
 	add_child(healfruit)
-	healfruitTimer.wait_time = randf_range(45 * timerMod, 60 * timerMod)
+	healfruitTimer.wait_time = randf_range(20 * timerMod, 30 * timerMod)
 	healfruitTimer.start()
 	healfruit.speed = speed
 
@@ -105,20 +105,20 @@ func _on_god_fruit_timer_timeout():
 	godfruit.speed = speed
 	godfruit.connect("godfruit_collected", Callable(player, "_on_godfruit_collected"))
 	add_child(godfruit)
-	godfruittimer.wait_time = randf_range(60 * timerMod, 120 * timerMod)
+	godfruittimer.wait_time = randf_range(30 * timerMod, 45 * timerMod)
 
 
 func SetTimers():
-	godfruittimer.wait_time = randf_range(60 * timerMod, 120 * timerMod)
+	godfruittimer.wait_time = randf_range(30 * timerMod, 45 * timerMod)
 	godfruittimer.start() 
 	
-	healfruitTimer.wait_time = randf_range(45 * timerMod, 60 * timerMod)
+	healfruitTimer.wait_time = randf_range(20 * timerMod, 30 * timerMod)
 	healfruitTimer.start()
 	
-	coinTimer.wait_time = randf_range(1 * timerMod, 2 * timerMod)
+	coinTimer.wait_time = randf_range(0.5 * timerMod, 1 * timerMod)
 	coinTimer.start()
 	
-	fruitTimer.wait_time = randf_range(1.5 * timerMod, 2.5 * timerMod)
+	fruitTimer.wait_time = 2.5
 	fruitTimer.start()
 	
 func StopSpawn():

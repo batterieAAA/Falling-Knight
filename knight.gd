@@ -158,7 +158,7 @@ func _on_fruit_collected():
 	pickeffect.self_modulate = Color(0, 0, 1)
 	pickeffect.emitting = true
 	sprite.speed_scale += 0.1
-	speedMod += 0.1
+	speedMod += 0.0125
 	nbFruit += 1
 	gamemanager.fruitcheck()
 	

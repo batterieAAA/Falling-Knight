@@ -7,7 +7,7 @@ var direction = randi_range(-1, 1)
 func _physics_process(delta):
 	# Move the coin upwards
 	position.y -= speed * delta
-	position.x += speed * direction * delta
+	position.x += speed / 2 * direction * delta
 
 	# Boundary checks
 	# Ensure the character stays within the viewport boundaries, considering the zoom factor
