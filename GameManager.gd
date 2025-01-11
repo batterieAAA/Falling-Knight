@@ -43,7 +43,7 @@ func init():
 
 	$Timer.wait_time = current_floor_data.floor_spawn_time
 	$Timer.start()
-	spawner.initialize(current_floor_data)
+	spawner.initialize(current_floor_data, max(0,floorIndex - all_floor_data.size()))
 
 func _on_timer_timeout():
 	player.can_interact = false

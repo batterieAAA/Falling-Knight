@@ -23,12 +23,12 @@ func _ready():
 	await get_tree().create_timer(1).timeout
 	SetTimers()
 
-func initialize(floorData: FloorData):
+func initialize(floorData: FloorData, floor_above_five: float):
 	minEnemySpawnTime = floorData.min_enemy_spawn_interval
 	maxEnemySpawnTime = floorData.max_enemy_spawn_interval
 	enemies = floorData.enemy_scenes
-	speed = floorData.speed
-	
+
+	speed = floorData.speed + (25 * floor_above_five)
 	enemyTimer.wait_time = randf_range(minEnemySpawnTime, maxEnemySpawnTime)
 	enemyTimer.start()
 
