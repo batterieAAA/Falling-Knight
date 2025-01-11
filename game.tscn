@@ -12,8 +12,8 @@
 [ext_resource type="Script" path="res://HealthUI.gd" id="10_16hlk"]
 [ext_resource type="Texture2D" uid="uid://dnrnbrw3tu6nw" path="res://Assets/heart sprite/Heart.png" id="10_iuvd1"]
 [ext_resource type="Resource" uid="uid://ceruxoqro2glk" path="res://FloorData/Floor1.tres" id="11_6lr5a"]
+[ext_resource type="AudioStream" uid="uid://b1kmgjtusqq33" path="res://Assets/BGM/City Lights.mp3" id="13_5nd3p"]
 [ext_resource type="PackedScene" uid="uid://fdh8v3533t1m" path="res://DeathScene.tscn" id="13_f4xkt"]
-[ext_resource type="AudioStream" uid="uid://cd0pcaauuyktm" path="res://Assets/BGM/Nightfall Dreams(1).mp3" id="13_fc74v"]
 [ext_resource type="Script" path="res://GameManager.gd" id="14_do4hm"]
 [ext_resource type="Resource" uid="uid://dotkejtiinpms" path="res://FloorData/Floor2.tres" id="15_0rng5"]
 [ext_resource type="Resource" uid="uid://2qiu0nsucek1" path="res://FloorData/Floor5.tres" id="15_5a5cc"]
@@ -286,7 +286,7 @@ grow_vertical = 2
 scale = Vector2(3, 3)
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_fc74v")
+stream = ExtResource("13_5nd3p")
 volume_db = -7.495
 autoplay = true
 
@@ -341,5 +341,6 @@ color = Color(0, 0, 0, 0)
 [connection signal="timeout" from="Spawner/EnemyTimer" to="Spawner" method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="Spawner/GodFruitTimer" to="Spawner" method="_on_god_fruit_timer_timeout"]
 [connection signal="timeout" from="Spawner/HealFruitTimer" to="Spawner" method="_on_heal_fruit_timer_timeout"]
+[connection signal="finished" from="MainMusic" to="GameManager" method="_on_main_music_finished"]
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="GameManager/Timer2" to="GameManager" method="_on_timer_2_timeout"]

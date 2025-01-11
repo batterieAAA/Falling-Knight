@@ -2911,7 +2911,6 @@ position = Vector2(576, 864)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_f3pbs")
 animation = &"walk"
-frame_progress = 0.0303081
 script = ExtResource("4_rx1vn")
 
 [node name="Biccurimark" type="Sprite2D" parent="AnimatedSprite2D"]

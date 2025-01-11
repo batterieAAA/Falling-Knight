@@ -6,6 +6,7 @@ extends Node
 @onready var player = $"../Knight"
 @onready var platform_1 = $Platform1
 @onready var platform_initial_position = platform_1.position
+@onready var main_music = $"../MainMusic"
 
 var floorIndex = 0
 var current_floor_data : FloorData
@@ -82,3 +83,7 @@ func _on_timer_2_timeout():
 		player.die()
 
 	player.can_interact = true
+
+
+func _on_main_music_finished():
+	main_music.play()
