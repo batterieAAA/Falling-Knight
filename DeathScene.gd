@@ -4,6 +4,7 @@ extends Control
 var highscore = 0
 @onready var scoreLabel = $Label/Score
 
+
 func showScore(score: int):
 	load_score()
 	if score > highscore:
@@ -20,3 +21,5 @@ func load_score():
 	if config.load("user://score.cfg") == OK:
 		highscore = config.get_value("score", "score", "score")
 		scoreLabel.text = str(highscore)
+
+

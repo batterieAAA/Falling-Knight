@@ -7,14 +7,20 @@ extends Node
 @onready var platform_1 = $Platform1
 @onready var platform_initial_position = platform_1.position
 @onready var main_music = $"../MainMusic"
+@onready var death_scene = $"../CanvasLayer2/DeathScene"
+
 
 var floorIndex = 0
 var current_floor_data : FloorData
 func _ready():
 	init()
 
+
+
 func _process(delta):
 	fruitcheck()
+
+
 
 func switch_floor():
 	platform_1.position = platform_initial_position
@@ -85,5 +91,9 @@ func _on_timer_2_timeout():
 	player.can_interact = true
 
 
+
+
 func _on_main_music_finished():
-	main_music.play()
+	$"../MainMusic2".play()
+
+

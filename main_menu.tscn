@@ -1,11 +1,15 @@
-[gd_scene load_steps=64 format=3 uid="uid://dd7lciym65218"]
+[gd_scene load_steps=69 format=3 uid="uid://dd7lciym65218"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_tnlxb"]
 [ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_yuea6"]
+[ext_resource type="Texture2D" uid="uid://bomeyh1sa3lff" path="res://Assets/backgrounds/bg_sky.png" id="2_se7oc"]
+[ext_resource type="Texture2D" uid="uid://rnf74w7s5a2r" path="res://Assets/backgrounds/background1.png" id="3_31xui"]
 [ext_resource type="Texture2D" uid="uid://dp1wtviqs0qtf" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="3_qpiya"]
 [ext_resource type="Texture2D" uid="uid://cwg0bhergmjwm" path="res://Assets/brackeys_platformer_assets/sprites/knight.png" id="3_rx0l7"]
 [ext_resource type="Texture2D" uid="uid://b3w21bgmwb1vi" path="res://Assets/brackeys_platformer_assets/sprites/platforms.png" id="4_rdl3y"]
 [ext_resource type="Script" path="res://mainmenuwalk.gd" id="4_rx1vn"]
+[ext_resource type="Shader" path="res://cloud.gdshader" id="4_t6b15"]
+[ext_resource type="Texture2D" uid="uid://62j05gk1p3ho" path="res://Assets/backgrounds/bg_clouds.png" id="5_imiix"]
 [ext_resource type="Texture2D" uid="uid://dy7jhivragf0l" path="res://Assets/backgrounds/TX Tileset Ground.png" id="5_o7qi8"]
 [ext_resource type="Texture2D" uid="uid://cevyvosfyaiah" path="res://Assets/backgrounds/TX Village Props.png" id="6_g7mk2"]
 [ext_resource type="Script" path="res://CameraShake.gd" id="7_clj0a"]
@@ -15,6 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://bqdwrug0eeofu" path="res://Assets/brackeys_platformer_assets/sprites/coin.png" id="13_qtodg"]
 [ext_resource type="AudioStream" uid="uid://3dwoyeb326c6" path="res://Assets/brackeys_platformer_assets/sounds/explosion.wav" id="14_vgrd1"]
 [ext_resource type="AudioStream" uid="uid://csqnu53hfstf6" path="res://Assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="15_07lad"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nccch"]
+shader = ExtResource("4_t6b15")
+shader_parameter/speed = Vector2(0.01, 0)
 
 [sub_resource type="Animation" id="Animation_f8kdk"]
 resource_name = "fade_in"
@@ -2820,6 +2828,25 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_tnlxb")
 
+[node name="BgSky" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(356, 472)
+scale = Vector2(7.82796, 6)
+texture = ExtResource("2_se7oc")
+region_enabled = true
+region_rect = Rect2(0, 0, 93, 160)
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(360, 1192)
+texture = ExtResource("3_31xui")
+
+[node name="BgClouds" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_nccch")
+position = Vector2(368, 408)
+scale = Vector2(5, 5)
+texture = ExtResource("5_imiix")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
@@ -3029,7 +3056,6 @@ pitch_scale = 0.21
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_07lad")
-autoplay = true
 
 [node name="Flash" type="ColorRect" parent="."]
 layout_mode = 0
