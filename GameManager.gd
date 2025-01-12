@@ -65,7 +65,7 @@ func _on_timer_timeout():
 		$Timer2.wait_time = 2.6
 	$Timer2.start()
 
-	spawner.StopSpawn()
+	spawner.stop_spawn()
 
 func fruitcheck():
 	if player.nbFruit >= current_floor_data.fruit_nb_required:
@@ -89,8 +89,6 @@ func _on_timer_2_timeout():
 		player.die()
 
 	player.can_interact = true
-
-
 
 
 func _on_main_music_finished():
