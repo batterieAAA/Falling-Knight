@@ -13,3 +13,7 @@ func _on_coin_body_entered(body):
 		emit_signal("coin_collected") 
 		queue_free() # Remove the coin from the scene
 
+
+
+func _on_timer_timeout():
+	queue_free()

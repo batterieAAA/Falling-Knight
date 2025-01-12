@@ -38,6 +38,15 @@ func initialize(floorData: FloorData, floor_above_five: float):
 	enemyTimer.wait_time = randf_range(minEnemySpawnTime, maxEnemySpawnTime)
 	enemyTimer.start()
 
+func check_overlap(new_item, area_extents): 
+	for child in get_children(): 
+		if child is Area2D and child != new_item: 
+			var distance = child.position.distance_to(new_item.position) 
+			if distance < area_extents.length(): 
+				return true 
+	return false
+
+
 func _on_coin_timer_timeout():
 	# Spawn a new item at a random position within the Area2D
 	var item = item_preload.instantiate()
@@ -70,6 +79,10 @@ func _on_fruit_timer_timeout():
 	fruitTimer.wait_time = 2.5
 	fruitTimer.start()
 	
+
+
+
+
 func _on_enemy_timer_timeout():
 	var enemy_scene = enemies[randi() % enemies.size()]
 	var enemy = enemy_scene.instantiate()
@@ -140,3 +153,4 @@ func resume_spawn():
 	enemyTimer.start() 
 	healfruitTimer.start() 
 	godfruittimer.start()
+

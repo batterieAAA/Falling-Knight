@@ -13,7 +13,7 @@ resource_name = "Distortion"
 pre_gain = 16.22
 
 [resource]
-bus/0/volume_db = -0.328256
+bus/0/volume_db = -4.77114
 bus/1/name = &"sfx"
 bus/1/solo = false
 bus/1/mute = false

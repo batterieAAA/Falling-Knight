@@ -1,0 +1,352 @@
+[gd_scene load_steps=40 format=3 uid="uid://7vmynjwuhmbj"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_2gcub"]
+[ext_resource type="Script" path="res://Spawner.gd" id="2_vkdfl"]
+[ext_resource type="Script" path="res://ParallaxMovement.gd" id="3_hdrdn"]
+[ext_resource type="Texture2D" uid="uid://rnf74w7s5a2r" path="res://Assets/backgrounds/background1.png" id="4_2046c"]
+[ext_resource type="Texture2D" uid="uid://cfh8p5dvsntbd" path="res://Assets/backgrounds/background2.png" id="5_wb55s"]
+[ext_resource type="PackedScene" uid="uid://bx37itkfim3pw" path="res://knight.tscn" id="5_xade8"]
+[ext_resource type="Texture2D" uid="uid://rc44msguql3v" path="res://Assets/backgrounds/background3.png" id="6_ly4tx"]
+[ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_rqegx"]
+[ext_resource type="Texture2D" uid="uid://dfgetcguu851j" path="res://Assets/backgrounds/background4a.png" id="7_d5dpd"]
+[ext_resource type="Texture2D" uid="uid://bqdwrug0eeofu" path="res://Assets/brackeys_platformer_assets/sprites/coin.png" id="9_1w86k"]
+[ext_resource type="Script" path="res://HealthUI.gd" id="10_16hlk"]
+[ext_resource type="Texture2D" uid="uid://dnrnbrw3tu6nw" path="res://Assets/heart sprite/Heart.png" id="10_iuvd1"]
+[ext_resource type="Resource" uid="uid://ceruxoqro2glk" path="res://FloorData/Floor1.tres" id="11_6lr5a"]
+[ext_resource type="AudioStream" uid="uid://b1kmgjtusqq33" path="res://Assets/BGM/City Lights.mp3" id="13_5nd3p"]
+[ext_resource type="PackedScene" uid="uid://fdh8v3533t1m" path="res://DeathScene.tscn" id="13_f4xkt"]
+[ext_resource type="Script" path="res://GameManager.gd" id="14_do4hm"]
+[ext_resource type="AudioStream" uid="uid://cd0pcaauuyktm" path="res://Assets/BGM/Nightfall Dreams(1).mp3" id="14_xvfkl"]
+[ext_resource type="Resource" uid="uid://dotkejtiinpms" path="res://FloorData/Floor2.tres" id="15_0rng5"]
+[ext_resource type="Resource" uid="uid://2qiu0nsucek1" path="res://FloorData/Floor5.tres" id="15_5a5cc"]
+[ext_resource type="Resource" uid="uid://c52ea0ed6gyla" path="res://FloorData/Floor3.tres" id="15_buxp3"]
+[ext_resource type="Resource" uid="uid://x17a8laq3adw" path="res://FloorData/Floor4.tres" id="15_nkxun"]
+[ext_resource type="PackedScene" uid="uid://ckaj56lypt8bb" path="res://FloorData/Platform1.tscn" id="20_d3gj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkjr7"]
+size = Vector2(200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbxrw"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amsi8"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fuli"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inj83"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc5b8"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl0vw"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rklww"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0ruo"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kupt6"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06os8"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8klc6"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj6mf"]
+atlas = ExtResource("9_1w86k")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36jam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbxrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amsi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fuli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inj83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uc5b8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl0vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rklww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0ruo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kupt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06os8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8klc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj6mf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qd8yc"]
+resource_name = "main_menu_intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flash:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wwvid"]
+resource_name = "main_menu_outro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flash:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6cbr"]
+_data = {
+"main_menu_intro": SubResource("Animation_qd8yc"),
+"main_menu_outro": SubResource("Animation_wwvid")
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2gcub")
+
+[node name="Spawner" type="Area2D" parent="."]
+position = Vector2(435, 257)
+script = ExtResource("2_vkdfl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner"]
+shape = SubResource("RectangleShape2D_kkjr7")
+
+[node name="CoinTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="FruitTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="EnemyTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="GodFruitTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="HealFruitTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(437, 22)
+zoom = Vector2(3, 3)
+
+[node name="Knight" parent="." instance=ExtResource("5_xade8")]
+position = Vector2(437, 22)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+follow_viewport_scale = 1000.0
+script = ExtResource("3_hdrdn")
+speed = Vector2(0, -50)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(0, 480)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("4_2046c")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(0, 480)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("5_wb55s")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(0, 480)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("6_ly4tx")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2(0.75, 0.75)
+motion_mirroring = Vector2(0, 480)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("7_d5dpd")
+centered = false
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+offset_left = 616.0
+offset_top = 24.0
+offset_right = 685.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("6_rqegx")
+theme_override_font_sizes/font_size = 50
+text = " 0"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2"]
+texture_filter = 1
+position = Vector2(574, 45)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_36jam")
+autoplay = "default"
+frame_progress = 0.681717
+
+[node name="HealthUI" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 29.0
+offset_top = 24.0
+offset_right = 69.0
+offset_bottom = 64.0
+script = ExtResource("10_16hlk")
+
+[node name="Heart1" type="TextureRect" parent="CanvasLayer2/HealthUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_iuvd1")
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer2/HealthUI"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 80.0
+offset_bottom = 40.0
+texture = ExtResource("10_iuvd1")
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer2/HealthUI"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 120.0
+offset_bottom = 40.0
+texture = ExtResource("10_iuvd1")
+
+[node name="DeathScene" parent="CanvasLayer2" instance=ExtResource("13_f4xkt")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -255.0
+offset_right = -117.0
+offset_bottom = -255.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_5nd3p")
+volume_db = -7.495
+autoplay = true
+
+[node name="MainMusic2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_xvfkl")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("14_do4hm")
+all_floor_data = Array[Resource("res://FloorData.gd")]([ExtResource("11_6lr5a"), ExtResource("15_0rng5"), ExtResource("15_buxp3"), ExtResource("15_nkxun"), ExtResource("15_5a5cc")])
+
+[node name="Timer" type="Timer" parent="GameManager"]
+wait_time = 20.0
+one_shot = true
+
+[node name="Platform1" parent="GameManager" instance=ExtResource("20_d3gj5")]
+position = Vector2(439, 379)
+scale = Vector2(6, 2)
+
+[node name="Timer2" type="Timer" parent="GameManager"]
+one_shot = true
+
+[node name="Flash" type="ColorRect" parent="."]
+process_mode = 3
+offset_left = -596.0
+offset_top = -704.0
+offset_right = -556.0
+offset_bottom = -664.0
+scale = Vector2(53.6736, 78.2143)
+color = Color(0, 0, 0, 0)
+
+[node name="LeftButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+offset_left = 64.0
+offset_top = -620.0
+offset_right = 438.0
+offset_bottom = 661.0
+
+[node name="RightButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+offset_left = 438.0
+offset_top = -618.0
+offset_right = 785.0
+offset_bottom = 663.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_o6cbr")
+}
+
+[connection signal="timeout" from="Spawner/CoinTimer" to="Spawner" method="_on_coin_timer_timeout"]
+[connection signal="timeout" from="Spawner/FruitTimer" to="Spawner" method="_on_fruit_timer_timeout"]
+[connection signal="timeout" from="Spawner/EnemyTimer" to="Spawner" method="_on_enemy_timer_timeout"]
+[connection signal="timeout" from="Spawner/GodFruitTimer" to="Spawner" method="_on_god_fruit_timer_timeout"]
+[connection signal="timeout" from="Spawner/HealFruitTimer" to="Spawner" method="_on_heal_fruit_timer_timeout"]
+[connection signal="finished" from="MainMusic" to="GameManager" method="_on_main_music_finished"]
+[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
+[connection signal="timeout" from="GameManager/Timer2" to="GameManager" method="_on_timer_2_timeout"]

@@ -17,4 +17,9 @@ region_rect = Rect2(0, 0, 15.1903, 16.5398)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pbxxn")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

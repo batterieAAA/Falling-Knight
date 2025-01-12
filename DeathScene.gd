@@ -22,4 +22,3 @@ func load_score():
 		highscore = config.get_value("score", "score", "score")
 		scoreLabel.text = str(highscore)
 
-

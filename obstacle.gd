@@ -33,3 +33,7 @@ func _on_coin_body_entered(body):
 
 func _on_timer_timeout():
 	direction = randi_range(-1, 1)
+
+
+func _on_timer_2_timeout():
+	queue_free()
