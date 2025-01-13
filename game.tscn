@@ -1,6 +1,5 @@
 [gd_scene load_steps=40 format=3 uid="uid://7vmynjwuhmbj"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_2gcub"]
 [ext_resource type="Script" path="res://Spawner.gd" id="2_vkdfl"]
 [ext_resource type="Script" path="res://ParallaxMovement.gd" id="3_hdrdn"]
 [ext_resource type="Texture2D" uid="uid://rnf74w7s5a2r" path="res://Assets/backgrounds/background1.png" id="4_2046c"]
@@ -15,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://ceruxoqro2glk" path="res://FloorData/Floor1.tres" id="11_6lr5a"]
 [ext_resource type="AudioStream" uid="uid://b1kmgjtusqq33" path="res://Assets/BGM/City Lights.mp3" id="13_5nd3p"]
 [ext_resource type="PackedScene" uid="uid://fdh8v3533t1m" path="res://DeathScene.tscn" id="13_f4xkt"]
+[ext_resource type="Script" path="res://pausebutton.gd" id="14_b67fn"]
 [ext_resource type="Script" path="res://GameManager.gd" id="14_do4hm"]
 [ext_resource type="AudioStream" uid="uid://cd0pcaauuyktm" path="res://Assets/BGM/Nightfall Dreams(1).mp3" id="14_xvfkl"]
 [ext_resource type="Resource" uid="uid://dotkejtiinpms" path="res://FloorData/Floor2.tres" id="15_0rng5"]
@@ -155,7 +155,6 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_2gcub")
 
 [node name="Spawner" type="Area2D" parent="."]
 position = Vector2(435, 257)
@@ -227,23 +226,6 @@ centered = false
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer2"]
-offset_left = 616.0
-offset_top = 24.0
-offset_right = 685.0
-offset_bottom = 76.0
-theme_override_fonts/font = ExtResource("6_rqegx")
-theme_override_font_sizes/font_size = 50
-text = " 0"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2"]
-texture_filter = 1
-position = Vector2(574, 45)
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_36jam")
-autoplay = "default"
-frame_progress = 0.681717
-
 [node name="HealthUI" type="Control" parent="CanvasLayer2"]
 layout_mode = 3
 anchors_preset = 0
@@ -287,6 +269,40 @@ offset_bottom = -255.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_top = 20.0
+offset_right = -26.0
+offset_bottom = 71.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="CanvasLayer2/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_rqegx")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2/HBoxContainer"]
+texture_filter = 1
+position = Vector2(-55, 25)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_36jam")
+autoplay = "default"
+frame_progress = 0.681717
+
+[node name="Button" type="Button" parent="CanvasLayer2"]
+process_mode = 3
+offset_left = 642.0
+offset_top = 89.0
+offset_right = 718.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("6_rqegx")
+text = "Pause"
+script = ExtResource("14_b67fn")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_5nd3p")
@@ -335,6 +351,7 @@ offset_left = 438.0
 offset_top = -618.0
 offset_right = 785.0
 offset_bottom = 663.0
+size_flags_horizontal = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 3
@@ -347,6 +364,8 @@ libraries = {
 [connection signal="timeout" from="Spawner/EnemyTimer" to="Spawner" method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="Spawner/GodFruitTimer" to="Spawner" method="_on_god_fruit_timer_timeout"]
 [connection signal="timeout" from="Spawner/HealFruitTimer" to="Spawner" method="_on_heal_fruit_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer2/Button" to="CanvasLayer2/Button" method="_on_pressed"]
 [connection signal="finished" from="MainMusic" to="GameManager" method="_on_main_music_finished"]
+[connection signal="finished" from="MainMusic2" to="GameManager" method="_on_main_music_2_finished"]
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="GameManager/Timer2" to="GameManager" method="_on_timer_2_timeout"]

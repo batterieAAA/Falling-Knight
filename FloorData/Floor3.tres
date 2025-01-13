@@ -12,5 +12,5 @@ background_color = Color(0.836501, 0.546796, 0.690807, 1)
 enemy_scenes = Array[PackedScene]([ExtResource("5_ylnlk"), ExtResource("6_h2hj7"), ExtResource("7_33s7g")])
 min_enemy_spawn_interval = 0.75
 max_enemy_spawn_interval = 0.8
-fruit_nb_required = 23.0
+fruit_nb_required = 20.0
 speed = 200.0

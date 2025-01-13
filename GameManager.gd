@@ -52,6 +52,7 @@ func init():
 	spawner.initialize(current_floor_data, max(0,floorIndex - all_floor_data.size()))
 
 func _on_timer_timeout():
+	spawner.stop_spawn()
 	player.can_interact = false
 	var tween = create_tween()
 	tween.set_parallel(true)
@@ -65,7 +66,7 @@ func _on_timer_timeout():
 		$Timer2.wait_time = 2.6
 	$Timer2.start()
 
-	spawner.stop_spawn()
+
 
 func fruitcheck():
 	if player.nbFruit >= current_floor_data.fruit_nb_required:
@@ -94,4 +95,5 @@ func _on_timer_2_timeout():
 func _on_main_music_finished():
 	$"../MainMusic2".play()
 
-
+func _on_main_music_2_finished():
+	$"../MainMusic".play()

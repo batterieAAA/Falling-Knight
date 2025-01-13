@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var camera = $"../Camera2D" 
-@onready var score_label = $"../CanvasLayer2/Label" 
+@onready var score_label = $"../CanvasLayer2/HBoxContainer/Label"
 @onready var knight = $"."
 @onready var healeffect = $HealEffect
 @onready var pickeffect = $GPUParticles2D
@@ -140,7 +140,10 @@ func _on_restart_button_pressed():
 func _on_quit_button_pressed():
 	# Quit the game
 	print("quit")
-	get_tree().quit()
+	game_animation_player.play("main_menu_outro")
+	await get_tree().create_timer(1).timeout
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func _on_coin_collected():
 	if not can_interact:
