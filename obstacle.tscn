@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cn3tb8cv3paqd"]
+[gd_scene load_steps=9 format=3 uid="uid://cn3tb8cv3paqd"]
 
 [ext_resource type="Script" path="res://obstacle.gd" id="1_ru6aq"]
 [ext_resource type="Texture2D" uid="uid://dft7kvv5hf5af" path="res://Assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_8nn3q"]
-[ext_resource type="Texture2D" uid="uid://chptgcebh4rk2" path="res://Assets/brackeys_platformer_assets/sprites/slime_purple.png" id="3_gdi60"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w45je"]
 atlas = ExtResource("2_8nn3q")
@@ -19,26 +18,6 @@ region = Rect2(48, 24, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nuc67"]
 atlas = ExtResource("2_8nn3q")
 region = Rect2(72, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_63drd"]
-atlas = ExtResource("3_gdi60")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_up6vk"]
-atlas = ExtResource("3_gdi60")
-region = Rect2(24, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ph0k"]
-atlas = ExtResource("3_gdi60")
-region = Rect2(48, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fs1dq"]
-atlas = ExtResource("3_gdi60")
-region = Rect2(72, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2abta"]
-atlas = ExtResource("3_gdi60")
-region = Rect2(0, 48, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ognc4"]
 animations = [{
@@ -58,26 +37,6 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_63drd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_up6vk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ph0k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fs1dq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2abta")
-}],
-"loop": true,
-"name": &"purple",
-"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ne2e"]
@@ -90,7 +49,6 @@ script = ExtResource("1_ru6aq")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ognc4")
 autoplay = "default"
-frame_progress = 0.202425
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5ne2e")

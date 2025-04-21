@@ -15,16 +15,26 @@ run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Assets/Dragon.png"
 
+[autoload]
+
+SkinManager="*res://Assets/Skins/SkinManager.gd"
+SoundManager="*res://Assets/BGM/SoundManager.tscn"
+
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [dotnet]
 
 project/assembly_name="Falling knight"
+
+[gui]
+
+theme/custom_font="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf"
 
 [input]
 
@@ -50,8 +60,18 @@ esc={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+viewport/hdr_2d=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
+2d/sdf/oversize=0
+2d/sdf/scale=0

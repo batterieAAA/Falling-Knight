@@ -1,10 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://crlqaowo0ia5"]
+[gd_scene load_steps=7 format=3 uid="uid://crlqaowo0ia5"]
 
 [ext_resource type="Texture2D" uid="uid://cr4qxyl60m0tg" path="res://Assets/brackeys_platformer_assets/sprites/fruit.png" id="1_u6y8u"]
 [ext_resource type="Script" path="res://godfruit.gd" id="1_vo413"]
 [ext_resource type="Texture2D" uid="uid://duf4lqv2n6j00" path="res://Assets/flare_01_0.png" id="2_2otk3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6nj2"]
+
+[sub_resource type="Gradient" id="Gradient_07kyj"]
+offsets = PackedFloat32Array(0, 0.486667, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_6k5ay"]
+offsets = PackedFloat32Array(0, 0.246667, 0.46, 0.713333, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1)
 
 [node name="GodFruit" type="Area2D"]
 script = ExtResource("1_vo413")
@@ -14,6 +22,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_2otk3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_y6nj2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,5 +30,25 @@ texture_filter = 1
 texture = ExtResource("1_u6y8u")
 region_enabled = true
 region_rect = Rect2(19.0273, 16.3496, 10.5402, 15.6504)
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("2_2otk3")
+emission_shape = 2
+emission_sphere_radius = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_07kyj")
+color_initial_ramp = SubResource("Gradient_6k5ay")
 
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]

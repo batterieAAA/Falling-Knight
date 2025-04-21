@@ -1,43 +1,214 @@
-[gd_scene load_steps=4 format=3 uid="uid://fdh8v3533t1m"]
+[gd_scene load_steps=11 format=3 uid="uid://fdh8v3533t1m"]
 
 [ext_resource type="Script" path="res://DeathScene.gd" id="1_o7lwr"]
 [ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_u6b74"]
+[ext_resource type="Texture2D" uid="uid://bi7i10uhibhe3" path="res://Assets/Skins/Greentrophy.png" id="2_db8la"]
 [ext_resource type="FontFile" uid="uid://bfiglejnnyewo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_uq1gx"]
+[ext_resource type="Texture2D" uid="uid://ttw6dvkcbmep" path="res://Assets/Skins/Godtrophy.png" id="3_wuo6b"]
+[ext_resource type="Texture2D" uid="uid://sbai6e6cqji7" path="res://Assets/Skins/Cointrophy.png" id="4_7e3rp"]
+[ext_resource type="Texture2D" uid="uid://b7bbf4pfjg6dc" path="res://Assets/Healfruit.png" id="5_64lwq"]
+[ext_resource type="StyleBox" uid="uid://cklf8p4l0i7fr" path="res://mainbuttonstyles.tres" id="7_egc36"]
+[ext_resource type="Texture2D" uid="uid://b0s3by3f55ahs" path="res://Assets/whitesquare.png" id="9_7adsi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v8oe"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="DeathScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_o7lwr")
 
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+offset_right = 726.0
+offset_bottom = 1275.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0v8oe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -355.5
+offset_right = -133.0
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Coin" type="TextureRect" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_7e3rp")
+
+[node name="GreenFruits" type="TextureRect" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_db8la")
+
+[node name="HealFruit" type="TextureRect" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_64lwq")
+
+[node name="GodFruits" type="TextureRect" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_wuo6b")
+
+[node name="1ptlabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 353.0
+offset_right = 463.0
+offset_bottom = 384.0
+theme_override_font_sizes/font_size = 30
+text = "  1 pt   x  "
+
+[node name="5ptlabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 448.0
+offset_right = 463.0
+offset_bottom = 479.0
+theme_override_font_sizes/font_size = 30
+text = "  5 pt   x  "
+
+[node name="25ptlabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 548.0
+offset_right = 478.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 30
+text = "25 pt   x   "
+
+[node name="50ptlabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 638.0
+offset_right = 478.0
+offset_bottom = 669.0
+theme_override_font_sizes/font_size = 30
+text = "50 pt   x   "
+
+[node name="Coinpt" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 353.0
+offset_right = 531.0
+offset_bottom = 384.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 2
+
+[node name="Greenpt2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 448.0
+offset_right = 531.0
+offset_bottom = 479.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 2
+
+[node name="Healpt3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 548.0
+offset_right = 531.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 2
+
+[node name="Godpt4" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 638.0
+offset_right = 531.0
+offset_bottom = 669.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 2
+
+[node name="Totalpt" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 723.0
+offset_right = 528.0
+offset_bottom = 754.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 2
+
+[node name="TotalScoreLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 726.0
+offset_right = 431.0
+offset_bottom = 767.0
+theme_override_font_sizes/font_size = 30
+text = "Total   :"
+
 [node name="RestartButton" type="Button" parent="."]
 process_mode = 3
 texture_filter = 1
-layout_mode = 2
-offset_left = 1.0
-offset_top = 46.0
-offset_right = 103.0
-offset_bottom = 77.0
-theme_override_fonts/font = ExtResource("1_u6b74")
+layout_mode = 1
+offset_left = 200.0
+offset_top = 892.0
+offset_right = 560.0
+offset_bottom = 994.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("7_egc36")
 text = "Restart"
 
 [node name="QuitButton" type="Button" parent="."]
 process_mode = 3
 texture_filter = 1
-layout_mode = 2
-offset_left = 1.0
-offset_top = 83.0
-offset_right = 103.0
-offset_bottom = 114.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 275.0
+offset_top = 1039.0
+offset_right = 488.0
+offset_bottom = 1132.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_u6b74")
-text = "Quit"
+theme_override_styles/normal = ExtResource("7_egc36")
+text = "Main Menu"
 
 [node name="Label" type="Label" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = -58.0
-offset_top = 2.0
-offset_right = 102.0
-offset_bottom = 25.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 159.0
+offset_top = 171.0
+offset_right = 319.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("3_uq1gx")
 text = "High Score:"
 
@@ -50,3 +221,8 @@ offset_right = 204.0
 offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("3_uq1gx")
 text = "0"
+
+[node name="Whitesquare" type="Sprite2D" parent="."]
+position = Vector2(428, 739)
+scale = Vector2(1.17073, 0.514852)
+texture = ExtResource("9_7adsi")

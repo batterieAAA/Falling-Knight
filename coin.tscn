@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://c306fb5j8iyvo"]
+[gd_scene load_steps=19 format=3 uid="uid://c306fb5j8iyvo"]
 
 [ext_resource type="Texture2D" uid="uid://bqdwrug0eeofu" path="res://Assets/brackeys_platformer_assets/sprites/coin.png" id="1_c6nhc"]
 [ext_resource type="Script" path="res://coin.gd" id="1_w044f"]
+[ext_resource type="Texture2D" uid="uid://duf4lqv2n6j00" path="res://Assets/flare_01_0.png" id="3_0v0hd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qn46v"]
 atlas = ExtResource("1_c6nhc")
@@ -98,6 +99,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ne2e"]
 radius = 5.09902
 
+[sub_resource type="Gradient" id="Gradient_pri0g"]
+offsets = PackedFloat32Array(0, 0.486667, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Coin" type="Area2D"]
 script = ExtResource("1_w044f")
 
@@ -111,8 +116,28 @@ frame_progress = 0.306561
 shape = SubResource("CircleShape2D_5ne2e")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
-autostart = true
+wait_time = 2.0
+one_shot = true
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("3_0v0hd")
+emission_shape = 2
+emission_sphere_radius = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color = Color(1, 1, 0, 1)
+color_ramp = SubResource("Gradient_pri0g")
 
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

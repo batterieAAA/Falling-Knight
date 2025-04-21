@@ -1,18 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://boj1y3a3rvgbo"]
+[gd_scene load_steps=8 format=3 uid="uid://boj1y3a3rvgbo"]
 
 [ext_resource type="Script" path="res://Fruit.gd" id="1_aawn3"]
 [ext_resource type="Texture2D" uid="uid://cr4qxyl60m0tg" path="res://Assets/brackeys_platformer_assets/sprites/fruit.png" id="2_b3j6t"]
+[ext_resource type="Texture2D" uid="uid://duf4lqv2n6j00" path="res://Assets/flare_01_0.png" id="3_5a8op"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbxxn"]
 
+[sub_resource type="Gradient" id="Gradient_wqgis"]
+offsets = PackedFloat32Array(0, 0.486667, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqmyh"]
+atlas = ExtResource("2_b3j6t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ucqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqmyh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Fruit" type="Area2D"]
 script = ExtResource("1_aawn3")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("2_b3j6t")
-region_enabled = true
-region_rect = Rect2(0, 0, 15.1903, 16.5398)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pbxxn")
@@ -20,6 +34,29 @@ shape = SubResource("CircleShape2D_pbxxn")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 6.0
 autostart = true
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("3_5a8op")
+emission_shape = 2
+emission_sphere_radius = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color = Color(0.0588235, 1, 0.0509804, 1)
+color_ramp = SubResource("Gradient_wqgis")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0ucqv")
 
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

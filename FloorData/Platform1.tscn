@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ckaj56lypt8bb"]
 
 [ext_resource type="Script" path="res://Platform.gd" id="1_wgwwq"]
-[ext_resource type="Texture2D" uid="uid://b3w21bgmwb1vi" path="res://Assets/brackeys_platformer_assets/sprites/platforms.png" id="2_d5cy1"]
+[ext_resource type="Texture2D" uid="uid://68cmo5o4hm47" path="res://Assets/platform.png" id="2_1dkw5"]
 [ext_resource type="AudioStream" uid="uid://3dwoyeb326c6" path="res://Assets/brackeys_platformer_assets/sounds/explosion.wav" id="3_k1q6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qiuyw"]
@@ -35,7 +35,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -47,7 +47,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("Sprite2D2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -98,7 +98,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -110,7 +110,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("Sprite2D2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -144,17 +144,16 @@ script = ExtResource("1_wgwwq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-11, -1)
-texture = ExtResource("2_d5cy1")
-region_enabled = true
+position = Vector2(-64, -3)
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_1dkw5")
 region_rect = Rect2(15.7443, 0, 21.1611, 9.3887)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(9, -1)
-scale = Vector2(1.13158, 1)
-texture = ExtResource("2_d5cy1")
-region_enabled = true
+position = Vector2(64, -2)
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_1dkw5")
 region_rect = Rect2(28.5666, 0, 19.5523, 9.3887)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -168,3 +167,4 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_k1q6y")
+bus = &"SFX"

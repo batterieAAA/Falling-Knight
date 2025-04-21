@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh06wtumg65pu"]
+[gd_scene load_steps=8 format=3 uid="uid://bh06wtumg65pu"]
 
 [ext_resource type="Texture2D" uid="uid://cr4qxyl60m0tg" path="res://Assets/brackeys_platformer_assets/sprites/fruit.png" id="1_gf3xp"]
 [ext_resource type="Script" path="res://heal_fruit.gd" id="1_n5aep"]
+[ext_resource type="Texture2D" uid="uid://duf4lqv2n6j00" path="res://Assets/flare_01_0.png" id="3_sq3sd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fsms0"]
 atlas = ExtResource("1_gf3xp")
@@ -21,6 +22,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_07k6d"]
 radius = 8.0
 
+[sub_resource type="Gradient" id="Gradient_ifs5v"]
+offsets = PackedFloat32Array(0, 0.486667, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="HealFruit" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_n5aep")
@@ -31,5 +36,24 @@ sprite_frames = SubResource("SpriteFrames_w2i47")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_07k6d")
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("3_sq3sd")
+emission_shape = 2
+emission_sphere_radius = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_ifs5v")
 
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]

@@ -1,25 +1,75 @@
-[gd_scene load_steps=64 format=3 uid="uid://dd7lciym65218"]
+[gd_scene load_steps=100 format=3 uid="uid://dd7lciym65218"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_tnlxb"]
 [ext_resource type="FontFile" uid="uid://bpircy60u0ojo" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_yuea6"]
 [ext_resource type="Texture2D" uid="uid://bomeyh1sa3lff" path="res://Assets/backgrounds/bg_sky.png" id="2_se7oc"]
 [ext_resource type="Texture2D" uid="uid://rnf74w7s5a2r" path="res://Assets/backgrounds/background1.png" id="3_31xui"]
-[ext_resource type="Texture2D" uid="uid://cwg0bhergmjwm" path="res://Assets/brackeys_platformer_assets/sprites/knight.png" id="3_rx0l7"]
 [ext_resource type="Script" path="res://mainmenuwalk.gd" id="4_rx1vn"]
 [ext_resource type="Shader" path="res://cloud.gdshader" id="4_t6b15"]
 [ext_resource type="Texture2D" uid="uid://62j05gk1p3ho" path="res://Assets/backgrounds/bg_clouds.png" id="5_imiix"]
 [ext_resource type="Texture2D" uid="uid://dy7jhivragf0l" path="res://Assets/backgrounds/TX Tileset Ground.png" id="5_o7qi8"]
 [ext_resource type="Texture2D" uid="uid://cevyvosfyaiah" path="res://Assets/backgrounds/TX Village Props.png" id="6_g7mk2"]
+[ext_resource type="StyleBox" uid="uid://cklf8p4l0i7fr" path="res://mainbuttonstyles.tres" id="7_2kipf"]
+[ext_resource type="Texture2D" uid="uid://dha05mhgb4h36" path="res://Assets/option1.png" id="7_04m1w"]
 [ext_resource type="Script" path="res://CameraShake.gd" id="7_clj0a"]
+[ext_resource type="Texture2D" uid="uid://blprpltesquak" path="res://Assets/spike.png" id="7_hl5al"]
+[ext_resource type="Texture2D" uid="uid://o1pl7flqsjdh" path="res://Assets/Skins/4thtrophy.png" id="8_5va01"]
+[ext_resource type="Script" path="res://Assets/Skins/achievementsbutton.gd" id="8_h85c0"]
+[ext_resource type="StyleBox" uid="uid://d1jpyx1w2xyhh" path="res://panelstylebox.tres" id="8_p2t40"]
+[ext_resource type="Texture2D" uid="uid://dnrnbrw3tu6nw" path="res://Assets/heart sprite/Heart.png" id="8_rw5oa"]
+[ext_resource type="Texture2D" uid="uid://cgulrb6jeds88" path="res://Assets/Skins/Horsetrophy.png" id="9_kihlr"]
+[ext_resource type="Texture2D" uid="uid://div7cqqiioy5g" path="res://Assets/Dragon.png" id="9_ku2jo"]
+[ext_resource type="Texture2D" uid="uid://bfnbaf7uoyujc" path="res://Assets/aibou.png" id="9_lanp2"]
+[ext_resource type="Texture2D" uid="uid://sbai6e6cqji7" path="res://Assets/Skins/Cointrophy.png" id="10_rb637"]
+[ext_resource type="Script" path="res://DiscordButton.gd" id="10_typfc"]
 [ext_resource type="Texture2D" uid="uid://dgftagoctg1gc" path="res://Assets/biccurimark.png" id="10_yyd4f"]
 [ext_resource type="Texture2D" uid="uid://cr4qxyl60m0tg" path="res://Assets/brackeys_platformer_assets/sprites/fruit.png" id="11_qp2tb"]
+[ext_resource type="Texture2D" uid="uid://bikieymshut61" path="res://Assets/Skins/2ndtrophy.png" id="12_3krf5"]
 [ext_resource type="Texture2D" uid="uid://duf4lqv2n6j00" path="res://Assets/flare_01_0.png" id="12_aygpi"]
+[ext_resource type="SpriteFrames" uid="uid://th3umiprsvia" path="res://Assets/Skins/helmknight.tres" id="13_but06"]
 [ext_resource type="Texture2D" uid="uid://bqdwrug0eeofu" path="res://Assets/brackeys_platformer_assets/sprites/coin.png" id="13_qtodg"]
+[ext_resource type="Texture2D" uid="uid://ttw6dvkcbmep" path="res://Assets/Skins/Godtrophy.png" id="14_0nifp"]
+[ext_resource type="Texture2D" uid="uid://bvgnlnq2kkcrl" path="res://Assets/Skins/3rdtrophy.png" id="14_phvah"]
 [ext_resource type="AudioStream" uid="uid://3dwoyeb326c6" path="res://Assets/brackeys_platformer_assets/sounds/explosion.wav" id="14_vgrd1"]
+[ext_resource type="Texture2D" uid="uid://bi7i10uhibhe3" path="res://Assets/Skins/Greentrophy.png" id="17_s5n1w"]
+[ext_resource type="AudioStream" uid="uid://la5b7l4ubikh" path="res://Assets/BGM/The balad of Cerealkev.mp3" id="19_oq25t"]
+[ext_resource type="Texture2D" uid="uid://415pi4liqvu0" path="res://Assets/trophydot.png" id="20_0gyxd"]
+[ext_resource type="Script" path="res://TrophyPanel.gd" id="20_aieg5"]
+[ext_resource type="Script" path="res://Assets/Tuto/TutorialPanel.gd" id="21_5e3hd"]
+[ext_resource type="Texture2D" uid="uid://lu75xfvh785k" path="res://Assets/Tuto/tuto1.png" id="21_dukak"]
+[ext_resource type="Texture2D" uid="uid://ti8mip12cpc8" path="res://Assets/Tuto/tuto2.png" id="22_3t74r"]
+[ext_resource type="Texture2D" uid="uid://chtfqserml2vy" path="res://Assets/Tuto/tuto3.png" id="23_lt7rl"]
+[ext_resource type="Texture2D" uid="uid://466w4ybg6squ" path="res://Assets/BGM/Music.png" id="25_a5wn0"]
+[ext_resource type="Texture2D" uid="uid://c1hx41ujorjbr" path="res://Assets/cart.png" id="26_5jm03"]
+[ext_resource type="Texture2D" uid="uid://du6yqe61m2xcx" path="res://Assets/BGM/NoMusic.png" id="26_xidkj"]
+[ext_resource type="Script" path="res://ShopPanel.gd" id="27_o7k1y"]
+[ext_resource type="Texture2D" uid="uid://cse5d4r61bspj" path="res://Assets/shield.png" id="28_vabkh"]
+[ext_resource type="Texture2D" uid="uid://dnlgigr0ftt8r" path="res://Assets/Skins/GoldArmorShopIcon.png" id="29_66r15"]
+[ext_resource type="Script" path="res://CosmeticPanel.gd" id="33_fbbuk"]
+[ext_resource type="Texture2D" uid="uid://crcnp5m4yg5c6" path="res://Assets/Skins/HorseKnightSkinIcon.png" id="35_dh8u7"]
+[ext_resource type="Texture2D" uid="uid://cr6af3xu0d74g" path="res://Assets/Skins/HelmlessSkinIcon.png" id="36_djmh7"]
+[ext_resource type="Texture2D" uid="uid://by3igtoadhqqu" path="res://Assets/Skins/GirlknightIcon.png" id="37_wgg0l"]
+[ext_resource type="Texture2D" uid="uid://ck286gqcg6rhp" path="res://Assets/ShopButton.png" id="40_0g2k4"]
+[ext_resource type="Texture2D" uid="uid://bi310c7kugtfy" path="res://Assets/merchant.png" id="41_0xf2k"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nccch"]
-shader = ExtResource("4_t6b15")
-shader_parameter/speed = Vector2(0.01, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6wii"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_m1ify"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cl0w"]
+bg_color = Color(0.355314, 0.355314, 0.355314, 0.65098)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukw13"]
+bg_color = Color(0.886262, 0.886261, 0.886262, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="Animation" id="Animation_f8kdk"]
 resource_name = "fade_in"
@@ -236,19 +286,43 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Flash:color")
+tracks/13/path = NodePath("Aibou:animation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Aibou:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 0)]
+"values": [Vector2(451, 861)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Aibou/Biccurimark:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_d0nhe"]
 resource_name = "intro"
-length = 4.0
+length = 3.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -420,14 +494,38 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Flash:color")
+tracks/14/path = NodePath("Aibou:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(3.5, 4.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+"values": [Vector2(451, 861), Vector2(797, 861)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Aibou:animation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Aibou/Biccurimark:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gix5q"]
@@ -435,6 +533,84 @@ _data = {
 "RESET": SubResource("Animation_ic02l"),
 "intro": SubResource("Animation_d0nhe")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrahf"]
+atlas = ExtResource("9_lanp2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqert"]
+atlas = ExtResource("9_lanp2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfcls"]
+atlas = ExtResource("9_lanp2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q1lq"]
+atlas = ExtResource("9_lanp2")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj30s"]
+atlas = ExtResource("9_lanp2")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v7sm"]
+atlas = ExtResource("9_lanp2")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d13ir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrahf")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_kqert")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_vfcls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqert")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrahf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrahf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrahf")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q1lq")
+}],
+"loop": false,
+"name": &"Pet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj30s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v7sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj30s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v7sm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clkcf"]
 texture = ExtResource("5_o7qi8")
@@ -2413,157 +2589,94 @@ texture = ExtResource("6_g7mk2")
 sources/2 = SubResource("TileSetAtlasSource_clkcf")
 sources/3 = SubResource("TileSetAtlasSource_0wrr8")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_on8ra"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(96, 160, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_voxnf"]
+atlas = ExtResource("41_0xf2k")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4cbxq"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(128, 160, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e3fe"]
+atlas = ExtResource("41_0xf2k")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s5n6v"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(160, 160, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_337dq"]
+atlas = ExtResource("41_0xf2k")
+region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xv4ev"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(192, 160, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_as0wn"]
+atlas = ExtResource("41_0xf2k")
+region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_itr2w"]
-atlas = ExtResource("3_rx0l7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrtjl"]
+atlas = ExtResource("41_0xf2k")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okq1f"]
+atlas = ExtResource("41_0xf2k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukpph"]
+atlas = ExtResource("41_0xf2k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duqoh"]
+atlas = ExtResource("41_0xf2k")
 region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x4pa0"]
-atlas = ExtResource("3_rx0l7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymjwg"]
+atlas = ExtResource("41_0xf2k")
 region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hn31a"]
-atlas = ExtResource("3_rx0l7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_odrep"]
+atlas = ExtResource("41_0xf2k")
 region = Rect2(64, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8c6v7"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(96, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0cbl0"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(128, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rcio1"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(160, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qin7c"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(192, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_12vno"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(224, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8stx"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(0, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q6bgl"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(32, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jqiql"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(64, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tkqro"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(96, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_knvya"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(128, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4tu0m"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(160, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xbj55"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(192, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fi7hb"]
-atlas = ExtResource("3_rx0l7")
-region = Rect2(224, 96, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f3pbs"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ec08"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_on8ra")
+"texture": SubResource("AtlasTexture_voxnf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4cbxq")
+"texture": SubResource("AtlasTexture_2e3fe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s5n6v")
+"texture": SubResource("AtlasTexture_2e3fe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xv4ev")
+"texture": SubResource("AtlasTexture_voxnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_337dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as0wn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrtjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okq1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukpph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duqoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymjwg")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_odrep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymjwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duqoh")
 }],
 "loop": true,
-"name": &"fall",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_itr2w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x4pa0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hn31a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8c6v7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0cbl0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rcio1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qin7c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_12vno")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e8stx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q6bgl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jqiql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tkqro")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_knvya")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4tu0m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xbj55")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fi7hb")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
+"name": &"default",
+"speed": 1.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fsms0"]
@@ -2673,56 +2786,856 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nccch"]
+shader = ExtResource("4_t6b15")
+shader_parameter/speed = Vector2(0.01, 0)
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_tnlxb")
 
-[node name="BgSky" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(356, 472)
-scale = Vector2(7.82796, 6)
-texture = ExtResource("2_se7oc")
-region_enabled = true
-region_rect = Rect2(0, 0, 93, 160)
-
-[node name="Background1" type="Sprite2D" parent="."]
-position = Vector2(360, 1192)
-texture = ExtResource("3_31xui")
-
-[node name="BgClouds" type="Sprite2D" parent="."]
-texture_filter = 1
-material = SubResource("ShaderMaterial_nccch")
-position = Vector2(368, 408)
-scale = Vector2(5, 5)
-texture = ExtResource("5_imiix")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="SpendableCoinLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.829167
+anchor_top = 0.0492188
+anchor_right = 0.975
+anchor_bottom = 0.0804688
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 3
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SpendableCoinLabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.175
+anchor_bottom = 1.175
+offset_left = -67.0
+offset_top = -64.0
+offset_right = -3.0
+texture = ExtResource("10_rb637")
+
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 79.0
-offset_top = 51.0
-offset_right = 618.0
-offset_bottom = 102.0
+anchors_preset = -1
+anchor_left = 0.126389
+anchor_top = 0.141406
+anchor_right = 0.875
+anchor_bottom = 0.18125
+offset_left = 3.05176e-05
+offset_right = -6.10352e-05
+grow_horizontal = 2
+size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 50
 theme_override_fonts/font = ExtResource("1_yuea6")
 theme_override_font_sizes/font_size = 50
 text = "Falling Knight"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 130.0
-offset_top = 717.0
-offset_right = 584.0
-offset_bottom = 887.0
-theme_override_fonts/font = ExtResource("1_yuea6")
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.266667
+anchor_top = 0.78125
+anchor_right = 0.711111
+anchor_bottom = 0.85
+offset_left = -1.52588e-05
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("7_2kipf")
 text = "START
 "
+metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="CanvasLayer"]
-wait_time = 3.0
+[node name="QuitButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.383333
+anchor_top = 0.871094
+anchor_right = 0.611111
+anchor_bottom = 0.920313
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("7_2kipf")
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="Shop" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.847222
+anchor_top = 0.598437
+anchor_right = 1.00278
+anchor_bottom = 0.714844
+offset_left = 8.0
+offset_top = -1.0
+offset_right = 8.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a6wii")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a6wii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a6wii")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_a6wii")
+theme_override_styles/focus = SubResource("StyleBoxFlat_a6wii")
+icon = ExtResource("40_0g2k4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.0111111
+anchor_top = 0.0125
+anchor_right = 0.988889
+anchor_bottom = 0.325
+offset_bottom = -3.05176e-05
+theme_override_styles/panel = ExtResource("8_p2t40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Settings
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoginReward" type="Button" parent="CanvasLayer/Panel"]
+texture_filter = 2
+layout_mode = 2
+anchor_left = 0.011
+anchor_top = 0.24
+anchor_right = 0.352
+anchor_bottom = 0.34
+offset_left = 0.256
+offset_right = 0.191986
+offset_bottom = 1.52588e-05
+theme_override_styles/normal = ExtResource("7_2kipf")
+text = "Log-in Reward"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.468
+anchor_right = 0.443
+anchor_bottom = 0.918
+offset_left = 11.0
+offset_top = -0.199997
+offset_right = 0.127991
+offset_bottom = -0.199982
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_m1ify")
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Music"
+
+[node name="BGMslider" type="HSlider" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Sound "
+
+[node name="SFXslider" type="HSlider" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="DiscordButton" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -309.0
+offset_top = 45.76
+offset_right = -59.0
+offset_bottom = 102.76
+grow_horizontal = 0
+text = "Discord test button"
+script = ExtResource("10_typfc")
+
+[node name="ResetProgress" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 274.76
+offset_right = 635.0
+offset_bottom = 348.76
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Warning
+Reset Progression"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 122.76
+offset_right = 485.0
+offset_bottom = 138.76
+text = "total: "
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 152.76
+offset_right = 491.0
+offset_bottom = 168.76
+text = "total: "
+
+[node name="Label3" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 179.76
+offset_right = 482.0
+offset_bottom = 195.76
+text = "total:"
+
+[node name="Label4" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 210.76
+offset_right = 486.0
+offset_bottom = 226.76
+text = "total:"
+
+[node name="Settings" type="Button" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.0236111
+anchor_top = 0.0421875
+anchor_right = 0.1125
+anchor_bottom = 0.0921875
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cl0w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ukw13")
+icon = ExtResource("7_04m1w")
+metadata/_edit_use_anchors_ = true
+
+[node name="TutoButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.665278
+anchor_top = 0.872656
+anchor_right = 0.790278
+anchor_bottom = 0.920313
+theme_override_styles/normal = ExtResource("7_2kipf")
+text = "How to"
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+clip_contents = true
+anchors_preset = -1
+anchor_left = 0.559722
+anchor_top = 0.405469
+anchor_right = 0.876389
+anchor_bottom = 0.728125
+offset_left = -3.05176e-05
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("8_p2t40")
+script = ExtResource("27_o7k1y")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/ShopPanel"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 84.0
+offset_right = 149.0
+offset_bottom = 110.0
+texture = ExtResource("10_rb637")
+expand_mode = 1
+
+[node name="ShopCloseButton" type="Button" parent="CanvasLayer/ShopPanel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -633.0
+offset_top = -499.0
+offset_right = 84.0
+offset_bottom = 740.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cl0w")
+text = "X"
+
+[node name="Label" type="Label" parent="CanvasLayer/ShopPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Old Man's Shop"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/ShopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -160.5
+offset_right = 93.0
+offset_bottom = 187.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ShopPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Shield"
+horizontal_alignment = 1
+
+[node name="BuyShieldButton" type="Button" parent="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(192, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+disabled = true
+text = "100  "
+icon = ExtResource("28_vabkh")
+alignment = 2
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer/BuyShieldButton"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 18.0
+offset_right = 131.0
+offset_bottom = 44.0
+texture = ExtResource("10_rb637")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gold Armor"
+horizontal_alignment = 1
+
+[node name="GoldArmorButton" type="Button" parent="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(192, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+disabled = true
+text = "0"
+icon = ExtResource("29_66r15")
+alignment = 2
+clip_text = true
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer/GoldArmorButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -14.0
+offset_right = 35.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_rb637")
+expand_mode = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Potion"
+horizontal_alignment = 1
+
+[node name="Button3" type="Button" parent="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+disabled = true
+text = "Soon.."
+
+[node name="Label4" type="Label" parent="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mystery box"
+horizontal_alignment = 1
+
+[node name="Button4" type="Button" parent="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+disabled = true
+text = "???"
+
+[node name="TutorialPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = -0.00416667
+anchor_top = 0.192969
+anchor_right = 1.00417
+anchor_bottom = 0.860937
+offset_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("8_p2t40")
+script = ExtResource("21_5e3hd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tuto1" type="TextureRect" parent="CanvasLayer/TutorialPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.185
+anchor_top = 0.387
+anchor_right = 0.826
+anchor_bottom = 0.794
+offset_left = -0.309998
+offset_top = 0.11499
+offset_right = 0.323975
+offset_bottom = 0.130005
+texture = ExtResource("21_dukak")
+
+[node name="Tuto1label" type="Label" parent="CanvasLayer/TutorialPanel/Tuto1"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = -192.0
+offset_right = 464.0
+offset_bottom = -51.0
+theme_override_font_sizes/font_size = 25
+text = "-Help the knight avoid dangerous obstacles!"
+autowrap_mode = 2
+
+[node name="Tuto2" type="TextureRect" parent="CanvasLayer/TutorialPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.194
+anchor_top = 0.303
+anchor_right = 0.829
+anchor_bottom = 0.692
+offset_left = 0.155991
+offset_top = -0.0650024
+offset_right = 0.145935
+offset_bottom = 0.339966
+texture = ExtResource("22_3t74r")
+
+[node name="Tuto2label" type="Label" parent="CanvasLayer/TutorialPanel/Tuto2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -104.0
+offset_right = 445.0
+offset_bottom = -47.0
+theme_override_font_sizes/font_size = 20
+text = "- Collect enough fruits to advance to the next level!"
+autowrap_mode = 2
+
+[node name="Tuto2label2" type="Label" parent="CanvasLayer/TutorialPanel/Tuto2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 416.0
+offset_right = 459.0
+offset_bottom = 485.0
+theme_override_font_sizes/font_size = 20
+text = "- Other fruits may help you in your journey but beware..!"
+autowrap_mode = 2
+
+[node name="Tuto3" type="TextureRect" parent="CanvasLayer/TutorialPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.247
+anchor_top = 0.372
+anchor_right = 0.795
+anchor_bottom = 0.695
+offset_left = -0.322006
+offset_top = -0.0599976
+offset_right = -0.169983
+offset_bottom = -0.225037
+texture = ExtResource("23_lt7rl")
+
+[node name="Label2" type="Label" parent="CanvasLayer/TutorialPanel/Tuto3"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -164.0
+offset_right = 432.0
+offset_bottom = -95.0
+theme_override_font_sizes/font_size = 20
+text = "- Collect coins to increase your score and unlock rewards!"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="CanvasLayer/TutorialPanel/Tuto3"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 404.0
+offset_right = 326.0
+offset_bottom = 469.0
+theme_override_font_sizes/font_size = 30
+text = "Good Luck!"
+autowrap_mode = 2
+
+[node name="PreviousButton" type="Button" parent="CanvasLayer/TutorialPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -750.0
+offset_right = 100.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "<"
+
+[node name="NextButton" type="Button" parent="CanvasLayer/TutorialPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -750.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = ">"
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/TutorialPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 10.0
+offset_bottom = 100.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cl0w")
+text = "X"
+
+[node name="HowtoLabel" type="Label" parent="CanvasLayer/TutorialPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 5.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterVolume" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.879167
+anchor_top = 0.934375
+anchor_right = 0.948611
+anchor_bottom = 0.973437
+grow_horizontal = 0
+grow_vertical = 0
+toggle_mode = true
+texture_normal = ExtResource("25_a5wn0")
+texture_pressed = ExtResource("26_xidkj")
+metadata/_edit_use_anchors_ = true
+
+[node name="TrophyButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.193056
+anchor_top = 0.876562
+anchor_right = 0.325
+anchor_bottom = 0.925781
+offset_right = 1.52588e-05
+grow_vertical = 0
+theme_override_styles/normal = ExtResource("7_2kipf")
+text = "Trophy"
+metadata/_edit_use_anchors_ = true
+
+[node name="Trophydot" type="TextureRect" parent="CanvasLayer/TrophyButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -27.0
+offset_top = -5.0
+offset_right = -11.0
+offset_bottom = 11.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+texture = ExtResource("20_0gyxd")
+
+[node name="TrophyPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.00277778
+anchor_top = 0.261719
+anchor_right = 1.00139
+anchor_bottom = 0.842969
+theme_override_styles/panel = ExtResource("8_p2t40")
+script = ExtResource("20_aieg5")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TrophyPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.5
+offset_top = -231.0
+offset_right = 69.5
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TrophyPanel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="1stTrophyButton" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+icon = ExtResource("7_hl5al")
+expand_icon = true
+script = ExtResource("8_h85c0")
+
+[node name="4thTrophyButton" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Beat the 4th floor"
+icon = ExtResource("8_5va01")
+expand_icon = true
+script = ExtResource("8_h85c0")
+
+[node name="HearthTrophyButton" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Collect 10 HeartFruits"
+icon = ExtResource("8_rw5oa")
+expand_icon = true
+script = ExtResource("8_h85c0")
+
+[node name="HorseTrophyButton" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Pet the horse"
+icon = ExtResource("9_kihlr")
+expand_icon = true
+script = ExtResource("8_h85c0")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/TrophyPanel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="2ndTrophyButton" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer2"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Beat the 2nd floor"
+icon = ExtResource("12_3krf5")
+expand_icon = true
+script = ExtResource("8_h85c0")
+
+[node name="5thTrophyButton" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer2"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Reach lvl 5"
+icon = ExtResource("9_ku2jo")
+expand_icon = true
+script = ExtResource("8_h85c0")
+
+[node name="GodFruitTrophyButton" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer2"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Collect 5 Godfruits"
+icon = ExtResource("14_0nifp")
+expand_icon = true
+script = ExtResource("8_h85c0")
+
+[node name="BuyTrophy" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("8_h85c0")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/TrophyPanel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="3rdTrophyButton" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer3"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Beat the 3rd Floor"
+icon = ExtResource("14_phvah")
+expand_icon = true
+script = ExtResource("8_h85c0")
+
+[node name="CoinTrophyButton" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer3"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Collect 100 coins"
+icon = ExtResource("10_rb637")
+expand_icon = true
+script = ExtResource("8_h85c0")
+
+[node name="GreenFruitTrophyButton" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer3"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Collect 100 GreenFruits"
+icon = ExtResource("17_s5n1w")
+expand_icon = true
+script = ExtResource("8_h85c0")
+
+[node name="Button4" type="Button" parent="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("8_h85c0")
+
+[node name="Label" type="Label" parent="CanvasLayer/TrophyPanel"]
+layout_mode = 2
+offset_left = 130.0
+offset_top = 57.0
+offset_right = 591.0
+offset_bottom = 88.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Beat the first Floor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CosmeticButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.408333
+anchor_top = 0.933594
+anchor_right = 0.588889
+anchor_bottom = 0.978906
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = ExtResource("7_2kipf")
+text = "Cosmetic"
+metadata/_edit_use_anchors_ = true
+
+[node name="CosmeticPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.0569444
+anchor_top = 0.717188
+anchor_right = 0.936111
+anchor_bottom = 0.926562
+theme_override_styles/panel = ExtResource("8_p2t40")
+script = ExtResource("33_fbbuk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/CosmeticPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.123134
+grow_horizontal = 2
+text = "Cosmetics"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldKnightSkin" type="Button" parent="CanvasLayer/CosmeticPanel"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 61.0
+offset_top = 55.0
+offset_right = 125.0
+offset_bottom = 119.0
+disabled = true
+icon = ExtResource("29_66r15")
+expand_icon = true
+
+[node name="HorseKnightSkin" type="Button" parent="CanvasLayer/CosmeticPanel"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 140.0
+offset_top = 55.0
+offset_right = 204.0
+offset_bottom = 119.0
+disabled = true
+icon = ExtResource("35_dh8u7")
+expand_icon = true
+
+[node name="HelmlessKnightSkin" type="Button" parent="CanvasLayer/CosmeticPanel"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 215.0
+offset_top = 57.0
+offset_right = 279.0
+offset_bottom = 121.0
+disabled = true
+icon = ExtResource("36_djmh7")
+expand_icon = true
+
+[node name="Default" type="Button" parent="CanvasLayer/CosmeticPanel"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 167.0
+offset_right = 189.0
+offset_bottom = 228.0
+text = "Default"
+
+[node name="GirlKnightSkin" type="Button" parent="CanvasLayer/CosmeticPanel"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 284.0
+offset_top = 58.0
+offset_right = 348.0
+offset_bottom = 122.0
+disabled = true
+icon = ExtResource("37_wgg0l")
+expand_icon = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.0390625
+offset_bottom = -50.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimationPlayer")
@@ -2735,20 +3648,6 @@ libraries = {
 "": SubResource("AnimationLibrary_gix5q")
 }
 
-[node name="TileMap2" type="TileMap" parent="."]
-texture_filter = 1
-scale = Vector2(3, 3)
-tile_set = SubResource("TileSet_3648m")
-format = 2
-layer_0/tile_data = PackedInt32Array(3670016, 1376258, 6, 3735552, 1376258, 7, 3801088, 1376258, 8, 3866624, 1376258, 9, 3670017, 1441794, 6, 3735553, 1441794, 7, 3801089, 1441794, 8, 3866625, 1441794, 9, 3670018, 1507330, 6, 3735554, 1507330, 7, 3801090, 1507330, 8, 3866626, 1507330, 9, 3670019, 1572866, 6, 3735555, 1572866, 7, 3801091, 1572866, 8, 3866627, 1572866, 9, 3670020, 1638402, 6, 3735556, 1638402, 7, 3801092, 1638402, 8, 3866628, 1638402, 9, 3670021, 1703938, 6, 3735557, 1703938, 7, 3801093, 1703938, 8, 3866629, 1703938, 9, 1245184, 131074, 0, 1310720, 131074, 1, 1376256, 131074, 2, 1441792, 1376258, 9, 1245185, 196610, 0, 1310721, 196610, 1, 1376257, 196610, 2, 1441793, 1179650, 16, 1245194, 131074, 0, 1310730, 131074, 1, 1376266, 131074, 2, 1441802, 1376258, 16, 1245195, 196610, 0, 1310731, 196610, 1, 1376267, 196610, 2, 1441803, 1441794, 16, 1245196, 131074, 0, 1310732, 131074, 1, 1376268, 131074, 2, 1441804, 1507330, 16, 1245197, 196610, 0, 1310733, 196610, 1, 1376269, 196610, 2, 1441805, 1572866, 16, 1245198, 1572866, 6, 1310734, 1572866, 7, 1376270, 1572866, 8, 1441806, 1572866, 9, 1507328, 1179650, 16, 1572864, 1179650, 17, 1507329, 1179650, 17, 1572865, 1245186, 17, 1507338, 1376258, 17, 1572874, 1310722, 16, 1507339, 1441794, 17, 1572875, 1376258, 16, 1507340, 1507330, 17, 1572876, 1441794, 16, 1507341, 1572866, 17, 1572877, 1507330, 16, 1507342, 1572866, 16, 1572878, 1572866, 16, 1638410, 1572866, 16, 1638411, 1376258, 16, 1638412, 1441794, 16, 1638413, 1507330, 16, 1638414, 1572866, 16, 1703946, 1572866, 17, 1703947, 1376258, 17, 1703948, 1441794, 17, 1703949, 1507330, 17, 1703950, 1572866, 17, 1638400, 1245186, 16, 1703936, 1245186, 17, 1638401, 1310722, 16, 1703937, 1310722, 17, 1310719, 131074, 0, 1376255, 131074, 1, 1441791, 131074, 2, 1507327, 131074, 3, 1572863, 131074, 4, 1638399, 131074, 2, 1703935, 131074, 3, 1769471, 131074, 4)
-
-[node name="TileMap" type="TileMap" parent="."]
-texture_filter = 1
-scale = Vector2(3, 3)
-tile_set = SubResource("TileSet_3648m")
-format = 2
-layer_0/tile_data = PackedInt32Array(3670016, 1376258, 6, 3735552, 1376258, 7, 3801088, 1376258, 8, 3866624, 1376258, 9, 3670017, 1441794, 6, 3735553, 1441794, 7, 3801089, 1441794, 8, 3866625, 1441794, 9, 3670018, 1507330, 6, 3735554, 1507330, 7, 3801090, 1507330, 8, 3866626, 1507330, 9, 3670019, 1572866, 6, 3735555, 1572866, 7, 3801091, 1572866, 8, 3866627, 1572866, 9, 3670020, 1638402, 6, 3735556, 1638402, 7, 3801092, 1638402, 8, 3866628, 1638402, 9, 3670021, 1703938, 6, 3735557, 1703938, 7, 3801093, 1703938, 8, 3866629, 1703938, 9, 1245184, 131074, 0, 1310720, 131074, 1, 1376256, 131074, 2, 1441792, 1376258, 9, 1245185, 196610, 0, 1310721, 196610, 1, 1376257, 196610, 2, 1441793, 1179650, 16, 1245186, 131074, 0, 1310722, 131074, 1, 1376258, 131074, 2, 1441794, 1245186, 16, 1245187, 196610, 0, 1310723, 196610, 1, 1376259, 196610, 2, 1441795, 1310722, 16, 1245188, 131074, 0, 1310724, 131074, 1, 1376260, 131074, 2, 1441796, 1376258, 16, 1245189, 196610, 0, 1310725, 196610, 1, 1376261, 196610, 2, 1441797, 1441794, 16, 1245190, 131074, 0, 1310726, 131074, 1, 1376262, 131074, 2, 1441798, 1507330, 16, 1245191, 196610, 0, 1310727, 196610, 1, 1376263, 196610, 2, 1441799, 1572866, 16, 1245192, 131074, 0, 1310728, 131074, 1, 1376264, 131074, 2, 1441800, 1245186, 16, 1245193, 196610, 0, 1310729, 196610, 1, 1376265, 196610, 2, 1441801, 1310722, 16, 1245194, 131074, 0, 1310730, 131074, 1, 1376266, 131074, 2, 1441802, 1376258, 16, 1245195, 196610, 0, 1310731, 196610, 1, 1376267, 196610, 2, 1441803, 1441794, 16, 1245196, 131074, 0, 1310732, 131074, 1, 1376268, 131074, 2, 1441804, 1507330, 16, 1245197, 196610, 0, 1310733, 196610, 1, 1376269, 196610, 2, 1441805, 1572866, 16, 1245198, 1572866, 6, 1310734, 1572866, 7, 1376270, 1572866, 8, 1441806, 1572866, 9, 1507328, 1179650, 16, 1572864, 1179650, 17, 1507329, 1179650, 17, 1572865, 1245186, 17, 1507330, 1245186, 17, 1572866, 1310722, 17, 1507331, 1310722, 17, 1572867, 1376258, 17, 1507332, 1376258, 17, 1572868, 1441794, 17, 1507333, 1441794, 17, 1572869, 1179650, 17, 1507334, 1507330, 17, 1572870, 1245186, 17, 1507335, 1572866, 17, 1572871, 1310722, 17, 1507336, 1245186, 17, 1572872, 1179650, 16, 1507337, 1310722, 17, 1572873, 1245186, 16, 1507338, 1376258, 17, 1572874, 1310722, 16, 1507339, 1441794, 17, 1572875, 1376258, 16, 1507340, 1507330, 17, 1572876, 1441794, 16, 1507341, 1572866, 17, 1572877, 1507330, 16, 1572878, 1572866, 16, 1638408, 1572866, 16, 1638409, 1507330, 16, 1638410, 1572866, 16, 1638411, 1376258, 16, 1638412, 1441794, 16, 1638413, 1507330, 16, 1638414, 1572866, 16, 1703944, 1572866, 17, 1703945, 1507330, 17, 1703946, 1572866, 17, 1703947, 1376258, 17, 1703948, 1441794, 17, 1703949, 1507330, 17, 1703950, 1572866, 17, 1638404, 1507330, 16, 1703940, 1507330, 17, 1638405, 1572866, 16, 1703941, 1572866, 17, 1638406, 1441794, 16, 1703942, 1441794, 17, 1638407, 1507330, 16, 1703943, 1507330, 17, 1638402, 1376258, 16, 1703938, 1376258, 17, 1638403, 1441794, 16, 1703939, 1441794, 17, 1638400, 1245186, 16, 1703936, 1245186, 17, 1638401, 1310722, 16, 1703937, 1310722, 17, 1310719, 131074, 0, 1376255, 131074, 1, 1441791, 131074, 2, 1507327, 131074, 3, 1572863, 131074, 4, 1638399, 131074, 2, 1703935, 131074, 3, 1769471, 131074, 4, 1507342, 1572866, 16)
-
 [node name="Tree" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(536, 672)
@@ -2757,64 +3656,53 @@ texture = ExtResource("6_g7mk2")
 region_enabled = true
 region_rect = Rect2(826, 439, 169, 177)
 
+[node name="Aibou" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(451, 861)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_d13ir")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Biccurimark" type="Sprite2D" parent="Aibou"]
+visible = false
+texture_filter = 1
+position = Vector2(0, -16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_yyd4f")
+
+[node name="Flare010" type="Sprite2D" parent="."]
+modulate = Color(1, 0.662745, 0.670588, 0.913725)
+position = Vector2(120, 706)
+scale = Vector2(1.67969, 1.61719)
+texture = ExtResource("12_aygpi")
+
+[node name="TileMap2" type="TileMap" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_3648m")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245184, 131074, 0, 1310720, 131074, 1, 1376256, 131074, 2, 1441792, 1376258, 9, 1245185, 196610, 0, 1310721, 196610, 1, 1376257, 196610, 2, 1441793, 1179650, 16, 1245194, 1441794, 6, 1310730, 1441794, 7, 1376266, 131074, 2, 1441802, 1376258, 16, 1245195, 1507330, 6, 1310731, 1507330, 7, 1376267, 196610, 2, 1441803, 1441794, 16, 1245196, 1572866, 6, 1310732, 1572866, 7, 1376268, 131074, 2, 1441804, 1507330, 16, 1245197, 1638402, 6, 1310733, 1638402, 7, 1376269, 196610, 2, 1441805, 1572866, 16, 1245198, 1441794, 6, 1310734, 1441794, 7, 1376270, 1572866, 8, 1441806, 1572866, 9, 1507328, 1179650, 16, 1572864, 1179650, 17, 1507329, 1179650, 17, 1572865, 1245186, 17, 1507338, 1376258, 17, 1572874, 1310722, 16, 1507339, 1441794, 17, 1572875, 1376258, 16, 1507340, 1507330, 17, 1572876, 1441794, 16, 1507341, 1572866, 17, 1572877, 1507330, 16, 1507342, 1572866, 16, 1572878, 1572866, 16, 1638410, 1572866, 16, 1638411, 1376258, 16, 1638412, 1441794, 16, 1638413, 1507330, 16, 1638414, 1572866, 16, 1703946, 1572866, 17, 1703947, 1376258, 17, 1703948, 1441794, 17, 1703949, 1507330, 17, 1703950, 1572866, 17, 1638400, 1245186, 16, 1703936, 1245186, 17, 1638401, 1310722, 16, 1703937, 1310722, 17, 1114123, 1441795, 36, 1179659, 1441795, 37, 1114124, 1507331, 36, 1179660, 1507331, 37, 1114125, 1572867, 36, 1179661, 1572867, 37, 1114126, 1638403, 36, 1179662, 1638403, 37, 1245199, 1441794, 6, 1310735, 1441794, 7, 1376271, 1572866, 8, 1441807, 1572866, 9, 1507343, 1572866, 16, 1572879, 1572866, 16, 1638415, 1572866, 16, 1703951, 1572866, 17, 1310719, 1441794, 6, 1376255, 1441794, 7, 1441791, 1572866, 8, 1507327, 1572866, 9, 1572863, 1572866, 16, 1638399, 1572866, 16, 1703935, 1572866, 16, 1310718, 1441794, 6, 1376254, 1441794, 7, 1441790, 1572866, 8, 1507326, 1572866, 9, 1572862, 1572866, 16, 1638398, 1572866, 16, 1703934, 1572866, 16)
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_3648m")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245184, 131074, 0, 1310720, 131074, 1, 1376256, 131074, 2, 1441792, 1376258, 9, 1245185, 196610, 0, 1310721, 196610, 1, 1376257, 196610, 2, 1441793, 1179650, 16, 1245186, 131074, 0, 1310722, 131074, 1, 1376258, 131074, 2, 1441794, 1245186, 16, 1245187, 196610, 0, 1310723, 196610, 1, 1376259, 196610, 2, 1441795, 1310722, 16, 1245188, 131074, 0, 1310724, 131074, 1, 1376260, 131074, 2, 1441796, 1376258, 16, 1245189, 196610, 0, 1310725, 196610, 1, 1376261, 196610, 2, 1441797, 1441794, 16, 1245190, 131074, 0, 1310726, 131074, 1, 1376262, 131074, 2, 1441798, 1507330, 16, 1245191, 196610, 0, 1310727, 196610, 1, 1376263, 196610, 2, 1441799, 1572866, 16, 1245192, 131074, 0, 1310728, 131074, 1, 1376264, 131074, 2, 1441800, 1245186, 16, 1245193, 196610, 0, 1310729, 196610, 1, 1376265, 196610, 2, 1441801, 1310722, 16, 1245194, 131074, 0, 1310730, 131074, 1, 1376266, 131074, 2, 1441802, 1376258, 16, 1245195, 196610, 0, 1310731, 196610, 1, 1376267, 196610, 2, 1441803, 1441794, 16, 1245196, 131074, 0, 1310732, 131074, 1, 1376268, 131074, 2, 1441804, 1507330, 16, 1245197, 196610, 0, 1310733, 196610, 1, 1376269, 196610, 2, 1441805, 1572866, 16, 1245198, 1572866, 6, 1310734, 1572866, 7, 1376270, 1572866, 8, 1441806, 1572866, 9, 1507328, 1179650, 16, 1572864, 1179650, 17, 1507329, 1179650, 17, 1572865, 1245186, 17, 1507330, 1245186, 17, 1572866, 1310722, 17, 1507331, 1310722, 17, 1572867, 1376258, 17, 1507332, 1376258, 17, 1572868, 1441794, 17, 1507333, 1441794, 17, 1572869, 1179650, 17, 1507334, 1507330, 17, 1572870, 1245186, 17, 1507335, 1572866, 17, 1572871, 1310722, 17, 1507336, 1245186, 17, 1572872, 1179650, 16, 1507337, 1310722, 17, 1572873, 1245186, 16, 1507338, 1376258, 17, 1572874, 1310722, 16, 1507339, 1441794, 17, 1572875, 1376258, 16, 1507340, 1507330, 17, 1572876, 1441794, 16, 1507341, 1572866, 17, 1572877, 1507330, 16, 1572878, 1572866, 16, 1638408, 1572866, 16, 1638409, 1507330, 16, 1638410, 1572866, 16, 1638411, 1376258, 16, 1638412, 1441794, 16, 1638413, 1507330, 16, 1638414, 1572866, 16, 1703944, 1572866, 17, 1703945, 1507330, 17, 1703946, 1572866, 17, 1703947, 1376258, 17, 1703948, 1441794, 17, 1703949, 1507330, 17, 1703950, 1572866, 17, 1638404, 1507330, 16, 1703940, 1507330, 17, 1638405, 1572866, 16, 1703941, 1572866, 17, 1638406, 1441794, 16, 1703942, 1441794, 17, 1638407, 1507330, 16, 1703943, 1507330, 17, 1638402, 1376258, 16, 1703938, 1376258, 17, 1638403, 1441794, 16, 1703939, 1441794, 17, 1638400, 1245186, 16, 1703936, 1245186, 17, 1638401, 1310722, 16, 1703937, 1310722, 17, 1310719, 131074, 0, 1376255, 131074, 1, 1441791, 131074, 2, 1507327, 131074, 3, 1572863, 131074, 4, 1638399, 131074, 2, 1703935, 131074, 3, 1769471, 131074, 4, 1507342, 1572866, 16, 1179654, 1703939, 29, 1179655, 1769475, 29)
+
+[node name="Merchant" type="AnimatedSprite2D" parent="."]
+position = Vector2(681, 874)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_0ec08")
+autoplay = "default"
+frame_progress = 0.285915
+
 [node name="Cart" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(304, 848)
-scale = Vector2(3, 3)
-texture = ExtResource("6_g7mk2")
-region_enabled = true
+texture = ExtResource("26_5jm03")
 region_rect = Rect2(25.6377, 295.822, 101.818, 56.3636)
-
-[node name="Sprite2D5" type="Sprite2D" parent="Cart"]
-texture_filter = 1
-position = Vector2(-18.6667, 10.6667)
-scale = Vector2(0.804762, 0.716216)
-texture = ExtResource("6_g7mk2")
-region_enabled = true
-region_rect = Rect2(125.76, 285.301, 35.8555, 37.0121)
-
-[node name="Fruits" type="Sprite2D" parent="Cart"]
-show_behind_parent = true
-texture_filter = 1
-position = Vector2(-32, -13.3333)
-texture = ExtResource("6_g7mk2")
-region_enabled = true
-region_rect = Rect2(395.73, 361.097, 9.64697, 13.2442)
-
-[node name="Fruits2" type="Sprite2D" parent="Cart/Fruits"]
-texture_filter = 1
-position = Vector2(8, 0)
-texture = ExtResource("6_g7mk2")
-region_enabled = true
-region_rect = Rect2(395.73, 361.097, 9.64697, 13.2442)
-
-[node name="Fruits3" type="Sprite2D" parent="Cart/Fruits/Fruits2"]
-texture_filter = 1
-position = Vector2(8, 0)
-texture = ExtResource("6_g7mk2")
-region_enabled = true
-region_rect = Rect2(395.73, 361.097, 9.64697, 13.2442)
-
-[node name="Fruits4" type="Sprite2D" parent="Cart/Fruits/Fruits2/Fruits3"]
-texture_filter = 1
-position = Vector2(8, 0)
-texture = ExtResource("6_g7mk2")
-region_enabled = true
-region_rect = Rect2(395.73, 361.097, 9.64697, 13.2442)
-
-[node name="Fruits5" type="Sprite2D" parent="Cart/Fruits/Fruits2/Fruits3/Fruits4"]
-texture_filter = 1
-position = Vector2(8, 0)
-texture = ExtResource("6_g7mk2")
-region_enabled = true
-region_rect = Rect2(395.73, 361.097, 9.64697, 13.2442)
-
-[node name="Fruits6" type="Sprite2D" parent="Cart/Fruits/Fruits2/Fruits3/Fruits4/Fruits5"]
-texture_filter = 1
-position = Vector2(8, 0)
-texture = ExtResource("6_g7mk2")
-region_enabled = true
-region_rect = Rect2(395.73, 361.097, 9.64697, 13.2442)
 
 [node name="Lamp" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -2826,27 +3714,27 @@ region_rect = Rect2(934.131, 23.8659, 29.39, 108.23)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Lamp"]
 texture_filter = 1
-position = Vector2(21.3333, -21.3333)
+position = Vector2(18.6667, -21.3333)
 texture = ExtResource("6_g7mk2")
 region_enabled = true
 region_rect = Rect2(975.734, 36.6066, 34.0551, 27.0574)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Lamp/Sprite2D3"]
 texture_filter = 1
-position = Vector2(8, 2.66666)
+position = Vector2(10.6667, 2.66666)
 texture = ExtResource("6_g7mk2")
 region_enabled = true
 region_rect = Rect2(965.549, 2.35908, 19.4247, 23.7414)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(352, 648)
+position = Vector2(361, 643)
 script = ExtResource("7_clj0a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(576, 864)
 scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_f3pbs")
+sprite_frames = ExtResource("13_but06")
 animation = &"walk"
 script = ExtResource("4_rx1vn")
 
@@ -2861,7 +3749,7 @@ texture = ExtResource("10_yyd4f")
 visible = false
 texture_filter = 1
 position = Vector2(232, 784)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture = ExtResource("11_qp2tb")
 region_enabled = true
 region_rect = Rect2(0, 0, 15.1903, 16.5398)
@@ -2870,14 +3758,14 @@ region_rect = Rect2(0, 0, 15.1903, 16.5398)
 visible = false
 texture_filter = 1
 position = Vector2(232, 784)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_phfj3")
 
 [node name="Godfruit1" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
 position = Vector2(288, 784)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture = ExtResource("11_qp2tb")
 region_enabled = true
 region_rect = Rect2(19.0273, 16.3496, 10.5402, 15.6504)
@@ -2891,30 +3779,95 @@ texture = ExtResource("12_aygpi")
 visible = false
 texture_filter = 1
 position = Vector2(216, 776)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_hph4b")
 autoplay = "default"
 frame_progress = 0.356615
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 5.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_vgrd1")
 volume_db = -2.015
 pitch_scale = 0.21
+bus = &"SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_oq25t")
 volume_db = -80.0
+autoplay = true
+bus = &"Music"
 
-[node name="Flash" type="ColorRect" parent="."]
+[node name="Petthehorse" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -596.0
-offset_top = -704.0
-offset_right = -556.0
-offset_bottom = -664.0
-scale = Vector2(53.6736, 78.2143)
-color = Color(0, 0, 0, 0)
+offset_left = 389.0
+offset_top = 807.0
+offset_right = 525.0
+offset_bottom = 912.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="BgSky" type="TextureRect" parent="CanvasLayer2"]
+texture_filter = 1
+offset_left = -44.0
+offset_top = 2.0
+offset_right = 59.0
+offset_bottom = 162.0
+scale = Vector2(7.73211, 5.9125)
+texture = ExtResource("2_se7oc")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BgClouds" type="Sprite2D" parent="CanvasLayer2"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_nccch")
+position = Vector2(357.5, 408)
+scale = Vector2(2.66544, 5)
+texture = ExtResource("5_imiix")
+
+[node name="Background1" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(399, 1192)
+scale = Vector2(1.18958, 1)
+texture = ExtResource("3_31xui")
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_start_game_button_pressed"]
-[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Shop" to="CanvasLayer/ShopPanel" method="_on_shop_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/LoginReward" to="." method="_on_login_reward_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Panel/VBoxContainer/BGMslider" to="." method="_on_bgmslider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Panel/VBoxContainer/SFXslider" to="." method="_on_sf_xslider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Panel/ResetProgress" to="." method="_on_reset_progress_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/TutoButton" to="." method="_on_tuto_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer/BuyShieldButton" to="CanvasLayer/ShopPanel" method="_on_buy_shield_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ShopPanel/HBoxContainer/VBoxContainer/GoldArmorButton" to="CanvasLayer/ShopPanel" method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/TutorialPanel/PreviousButton" to="CanvasLayer/TutorialPanel" method="_on_previous_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TutorialPanel/NextButton" to="CanvasLayer/TutorialPanel" method="_on_next_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TutorialPanel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MasterVolume" to="." method="_on_master_volume_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyButton" to="CanvasLayer/TrophyPanel" method="_on_trophy_b_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer/1stTrophyButton" to="CanvasLayer/TrophyPanel" method="_on_st_trophy_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer/4thTrophyButton" to="CanvasLayer/TrophyPanel" method="_on_th_trophy_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer/HearthTrophyButton" to="CanvasLayer/TrophyPanel" method="_on_hearth_trophy_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer/HorseTrophyButton" to="CanvasLayer/TrophyPanel" method="_on_horse_trophy_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer2/2ndTrophyButton" to="CanvasLayer/TrophyPanel" method="_on_second_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer2/5thTrophyButton" to="CanvasLayer/TrophyPanel" method="_on_fifth_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer2/GodFruitTrophyButton" to="CanvasLayer/TrophyPanel" method="_on_godfruit_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer2/BuyTrophy" to="CanvasLayer/TrophyPanel" method="_on_buytrophy_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer3/3rdTrophyButton" to="CanvasLayer/TrophyPanel" method="_on_thirdtrophy_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer3/CoinTrophyButton" to="CanvasLayer/TrophyPanel" method="_on_cointrophy_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer3/GreenFruitTrophyButton" to="CanvasLayer/TrophyPanel" method="_on_Greenfruit_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrophyPanel/HBoxContainer/VBoxContainer3/Button4" to="CanvasLayer/TrophyPanel" method="_on_button4_pressed"]
+[connection signal="pressed" from="CanvasLayer/CosmeticButton" to="CanvasLayer/CosmeticPanel" method="_on_cosmetic_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CosmeticPanel/GoldKnightSkin" to="CanvasLayer/CosmeticPanel" method="_on_gold_knight_skin_pressed"]
+[connection signal="pressed" from="CanvasLayer/CosmeticPanel/HorseKnightSkin" to="CanvasLayer/CosmeticPanel" method="_on_horse_knight_skin_pressed"]
+[connection signal="pressed" from="CanvasLayer/CosmeticPanel/HelmlessKnightSkin" to="CanvasLayer/CosmeticPanel" method="_on_helmless_knight_skin_pressed"]
+[connection signal="pressed" from="CanvasLayer/CosmeticPanel/Default" to="CanvasLayer/CosmeticPanel" method="_on_default_pressed"]
+[connection signal="pressed" from="CanvasLayer/CosmeticPanel/GirlKnightSkin" to="CanvasLayer/CosmeticPanel" method="_on_girl_knight_skin_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="button_down" from="Petthehorse" to="." method="_on_petthehorse_button_down"]
+[connection signal="button_up" from="Petthehorse" to="." method="_on_petthehorse_button_up"]
+[connection signal="pressed" from="Petthehorse" to="." method="_on_petthehorse_pressed"]

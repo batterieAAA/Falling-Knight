@@ -1,121 +1,43 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqq5pt2qycncx"]
+[gd_scene load_steps=10 format=3 uid="uid://dqq5pt2qycncx"]
 
 [ext_resource type="Script" path="res://ditto.gd" id="1_1wl1w"]
 [ext_resource type="Texture2D" uid="uid://cr4qxyl60m0tg" path="res://Assets/brackeys_platformer_assets/sprites/fruit.png" id="2_eojhs"]
-[ext_resource type="Texture2D" uid="uid://dft7kvv5hf5af" path="res://Assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_lmow6"]
 [ext_resource type="Texture2D" uid="uid://b878gl7axf3s" path="res://Assets/enemy.png" id="3_8aanw"]
-[ext_resource type="Texture2D" uid="uid://chptgcebh4rk2" path="res://Assets/brackeys_platformer_assets/sprites/slime_purple.png" id="3_tmnxd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r5s5d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w40cs"]
 atlas = ExtResource("3_8aanw")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_upgfh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_weuu7"]
 atlas = ExtResource("3_8aanw")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i7xqo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8xtv"]
 atlas = ExtResource("3_8aanw")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w45je"]
-atlas = ExtResource("2_lmow6")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3uca2"]
-atlas = ExtResource("2_lmow6")
-region = Rect2(24, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mdtka"]
-atlas = ExtResource("2_lmow6")
-region = Rect2(48, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nuc67"]
-atlas = ExtResource("2_lmow6")
-region = Rect2(72, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_63drd"]
-atlas = ExtResource("3_tmnxd")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_up6vk"]
-atlas = ExtResource("3_tmnxd")
-region = Rect2(24, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ph0k"]
-atlas = ExtResource("3_tmnxd")
-region = Rect2(48, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fs1dq"]
-atlas = ExtResource("3_tmnxd")
-region = Rect2(72, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2abta"]
-atlas = ExtResource("3_tmnxd")
-region = Rect2(0, 48, 24, 24)
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ognc4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r5s5d")
+"texture": SubResource("AtlasTexture_w40cs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_upgfh")
+"texture": SubResource("AtlasTexture_weuu7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i7xqo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_upgfh")
+"texture": SubResource("AtlasTexture_v8xtv")
 }],
 "loop": true,
 "name": &"Ditto",
-"speed": 4.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w45je")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3uca2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mdtka")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nuc67")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_63drd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_up6vk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ph0k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fs1dq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2abta")
-}],
-"loop": true,
-"name": &"purple",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ne2e"]
 radius = 5.09902
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pcohm"]
-radius = 48.0104
+radius = 89.0
 
 [node name="Obstacle" type="Area2D"]
 script = ExtResource("1_1wl1w")
@@ -132,6 +54,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ognc4")
 animation = &"Ditto"
 autoplay = "Ditto"
+frame_progress = 0.725335
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5ne2e")

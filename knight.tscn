@@ -1,171 +1,13 @@
-[gd_scene load_steps=38 format=3 uid="uid://bx37itkfim3pw"]
+[gd_scene load_steps=17 format=3 uid="uid://bx37itkfim3pw"]
 
 [ext_resource type="Script" path="res://knight.gd" id="1_4csyi"]
-[ext_resource type="Texture2D" uid="uid://cwg0bhergmjwm" path="res://Assets/brackeys_platformer_assets/sprites/knight.png" id="1_c4uhp"]
-[ext_resource type="AudioStream" uid="uid://dlg62eleehada" path="res://Assets/brackeys_platformer_assets/sounds/coin.wav" id="3_h3tap"]
+[ext_resource type="SpriteFrames" uid="uid://th3umiprsvia" path="res://Assets/Skins/helmknight.tres" id="3_c3dn4"]
 [ext_resource type="AudioStream" uid="uid://dnyn0ks7nvjcb" path="res://Assets/brackeys_platformer_assets/sounds/power_up.wav" id="4_45am3"]
-[ext_resource type="AudioStream" uid="uid://bgpp56slccmlp" path="res://Assets/brackeys_platformer_assets/sounds/hurt.wav" id="5_ltmou"]
 [ext_resource type="Texture2D" uid="uid://dnrnbrw3tu6nw" path="res://Assets/heart sprite/Heart.png" id="6_di1gs"]
 [ext_resource type="Shader" path="res://holy.gdshader" id="7_j1gpa"]
 [ext_resource type="Texture2D" uid="uid://blyn72qg4hjg3" path="res://Assets/sword.png" id="9_21f75"]
 [ext_resource type="Texture2D" uid="uid://duf4lqv2n6j00" path="res://Assets/flare_01_0.png" id="9_eyhag"]
 [ext_resource type="Shader" path="res://FloorData/flash.gdshader" id="10_4ogie"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ojw6e"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(64, 168, 32, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_afw6t"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(32, 168, 32, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_47nol"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(0, 168, 32, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fv53v"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(0, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3rq4m"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(32, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ggfev"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(64, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3heje"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(96, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gk48s"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(64, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_13uwy"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(96, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s13px"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(128, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dopt7"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(160, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlo0o"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cgjp2"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yh4jd"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u2jsj"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(96, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kel4l"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(128, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1kmh"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(160, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7os6"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(192, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q78yj"]
-atlas = ExtResource("1_c4uhp")
-region = Rect2(224, 64, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wf4b1"]
-animations = [{
-"frames": [{
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_ojw6e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_afw6t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_47nol")
-}],
-"loop": false,
-"name": &"crash",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fv53v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3rq4m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ggfev")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3heje")
-}],
-"loop": false,
-"name": &"death",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gk48s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_13uwy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s13px")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dopt7")
-}],
-"loop": true,
-"name": &"fall",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nlo0o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cgjp2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yh4jd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u2jsj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kel4l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c1kmh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j7os6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q78yj")
-}],
-"loop": true,
-"name": &"run",
-"speed": 10.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdxep"]
 radius = 7.0
@@ -426,6 +268,19 @@ shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/radius = 0.001
 shader_parameter/intensity = 1.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_22nj5"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 5.0
+emission_ring_radius = 5.0
+emission_ring_inner_radius = 0.0
+gravity = Vector3(0, -90, 0)
+tangential_accel_min = -50.0
+tangential_accel_max = 50.0
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
 [node name="Knight" type="CharacterBody2D"]
 script = ExtResource("1_4csyi")
 
@@ -443,28 +298,23 @@ gravity = Vector2(0, -200)
 process_mode = 3
 texture_filter = 1
 position = Vector2(0, -6)
-sprite_frames = SubResource("SpriteFrames_wf4b1")
-animation = &"crash"
-autoplay = "fall"
+sprite_frames = ExtResource("3_c3dn4")
+animation = &"fall"
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_hdxep")
-
-[node name="CoinSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_h3tap")
-volume_db = -20.0
 
 [node name="PowerUpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_45am3")
 volume_db = -15.0
+bus = &"SFX"
 
 [node name="DamageTimer" type="Timer" parent="."]
 
 [node name="GodTimer" type="Timer" parent="."]
 wait_time = 5.0
-
-[node name="HurtSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_ltmou")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -520,6 +370,11 @@ offset_left = -265.0
 offset_top = -252.0
 offset_right = 265.0
 offset_bottom = 245.0
+
+[node name="godeffect" type="GPUParticles2D" parent="."]
+visible = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_22nj5")
 
 [connection signal="timeout" from="DamageTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="GodTimer" to="." method="_on_god_timer_timeout"]
