@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://b00dmwdeohkiy" path="res://fireball.tscn" id="27_ctfg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkjr7"]
-size = Vector2(212, 9)
+size = Vector2(187, 9)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5pl5"]
 bg_color = Color(0.580392, 0.580392, 0.580392, 1)
@@ -209,7 +209,7 @@ tracks/2/path = NodePath("Dragonevent:shooting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 8, 8.2, 10.4, 10.6, 11.9, 12.1, 13.2, 13.3, 15.2, 15.3, 16.9, 17, 18.1, 18.2, 18.9, 19, 20.6, 20.7, 21.8, 21.9, 22.9, 23, 24.6, 24.7, 25.8, 25.9),
+"times": PackedFloat32Array(0, 8, 8.1, 10.4, 10.5, 11.9, 12, 13.2, 13.3, 15.2, 15.3, 16.9, 17, 18.1, 18.2, 18.9, 19, 20.6, 20.7, 21.8, 21.9, 22.9, 23, 24.6, 24.7, 25.8, 25.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
@@ -263,11 +263,11 @@ _data = {
 [node name="Game" type="Node2D"]
 
 [node name="Spawner" type="Area2D" parent="."]
-position = Vector2(386, 460)
+position = Vector2(396, 497)
 script = ExtResource("2_vkdfl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner"]
-position = Vector2(1, -7.5)
+position = Vector2(-9.5, -7.5)
 shape = SubResource("RectangleShape2D_kkjr7")
 
 [node name="CoinTimer" type="Timer" parent="Spawner"]
@@ -286,13 +286,14 @@ one_shot = true
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(386, 214)
-zoom = Vector2(3, 3)
+position = Vector2(385, 228)
+scale = Vector2(1, 1.52404)
+zoom = Vector2(3.5, 3)
 process_callback = 0
 editor_draw_limits = true
 
 [node name="Knight" parent="." instance=ExtResource("5_xade8")]
-position = Vector2(386, 93)
+position = Vector2(383, 175)
 scale = Vector2(1.2, 1.2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -395,13 +396,15 @@ text = "Score: 0"
 
 [node name="Button" type="Button" parent="PauseMenu"]
 process_mode = 3
-offset_left = 642.0
-offset_top = 89.0
-offset_right = 722.0
-offset_bottom = 150.0
+offset_left = 631.0
+offset_top = 182.0
+offset_right = 711.0
+offset_bottom = 243.0
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("6_rqegx")
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_x5pl5")
-text = "Pause"
+text = "||"
 script = ExtResource("14_b67fn")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -541,6 +544,7 @@ libraries = {
 }
 
 [node name="Dragonevent" type="Area2D" parent="."]
+visible = false
 position = Vector2(226, 219)
 script = ExtResource("26_ssrnc")
 projectile_scene = ExtResource("27_ctfg7")
